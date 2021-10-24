@@ -26,4 +26,4 @@ about music to exchange ideas because in the world of music new things are happe
 
 [Iteration2](../../wiki/Iteration-2)
 
-![kiwimusic-logo]<img src="media/logo-colored.png" width="100" height="100">
+<img src="media/logo-colored.png" width="500" height="500">
