@@ -14,14 +14,15 @@ about music to exchange ideas because in the world of music new things are happe
 
 ## Document
 
-[Wiki Home](../../wiki/Home)
+[Home Wiki](../../wiki/Home)
 
-[Vision Statement](../../wiki/Vision%20Statement)
+[Vision Statement](../../wiki/VisionStatement)
 
-[Features list](../../wiki/Features%20list)
+[Requirements](../../wiki/Requirements)
 
 ## Iterations
 
-[Iteration1](../../wiki/Iteration-1)
+[Iteration1](../../wiki/Iteration-1)  
+
 [Iteration2](../../wiki/Iteration-2)
 
