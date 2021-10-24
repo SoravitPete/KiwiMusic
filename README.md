@@ -16,7 +16,7 @@ about music to exchange ideas because in the world of music new things are happe
 
 [Home Wiki](../../wiki/Home)
 
-[Vision Statement](../../wiki/VisionStatement)
+[Vision Statement](../../wiki/Vision Statement)
 
 [Requirements](../../wiki/Requirements)
 
