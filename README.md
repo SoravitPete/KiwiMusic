@@ -1,4 +1,4 @@
-# KiwiMusic
+# <img src="media/logo-without-text.png" width="30" height="30"> KiwiMusic 
 
 KiwiMusic is a wiki web application for music. We have information of various songs. KiwiMusic 
 is made for people who’re interested in music. You’ll know more songs and exchange ideas 
