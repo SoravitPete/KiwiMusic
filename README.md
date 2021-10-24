@@ -26,3 +26,4 @@ about music to exchange ideas because in the world of music new things are happe
 
 [Iteration2](../../wiki/Iteration-2)
 
+![kiwimusic-logo](media/logo-colored.png)
