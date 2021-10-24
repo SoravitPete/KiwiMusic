@@ -14,16 +14,16 @@ about music to exchange ideas because in the world of music new things are happe
 
 ## Document
 
-[Home Wiki](../../wiki/Home)
+- [Home Wiki](../../wiki/Home)
 
-[Vision Statement](../../wiki/Vision%20Statement)
+- [Vision Statement](../../wiki/Vision%20Statement)
 
-[Requirements](../../wiki/Requirements)
+- [Requirements](../../wiki/Requirements)
 
 ## Iterations
 
-[Iteration1](../../wiki/Iteration-1)  
+- [Iteration1](../../wiki/Iteration-1)  
 
-[Iteration2](../../wiki/Iteration-2)
+- [Iteration2](../../wiki/Iteration-2)
 
-<img src="media/logo-colored.png" width="500" height="500">
+<div align="center"><img src="media/logo-colored.png" width="300" height="300"></div>
