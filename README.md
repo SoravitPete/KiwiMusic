@@ -1,7 +1,7 @@
 # KiwiMusic
 
 KiwiMusic is a wiki web application for music. We have information of various songs. KiwiMusic 
-is made for people who’re interested in music. So you’ll know more songs and exchange ideas 
+is made for people who’re interested in music. You’ll know more songs and exchange ideas 
 with other people who love music as well.
 
 ## Background
