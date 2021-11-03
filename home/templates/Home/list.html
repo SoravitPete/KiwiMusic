@@ -5,7 +5,7 @@
     <h1>{{ song_type.song_type }}</h1>
     <ul>
         {% for song in list_song %}
-        <li>{{ song }}</li>
+        <li><a href="/home/{{ song_type.song_type }}/{{song}}">{{ song }}</a></li>
         {% endfor %}
     </ul>
 </head>

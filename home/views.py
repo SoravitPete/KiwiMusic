@@ -22,5 +22,15 @@ def list_song(request, song_type):
     return render(request, 'Home/list.html', context)
 
 
+def details(request, song_type, song_name):
+    song_type = SongType.objects.get(song_type=song_type)
+    song_name = SongName.objects.get(song_name=song_name)
+    context = {
+        "song_category": song_type,
+        "song_name": song_name
+    }
+    return render(request, 'Home/details.html', context)
+
+
 def billboard(request):
     return HttpResponse("You're looking at Billboard. \nThis is ranking for this week.")
