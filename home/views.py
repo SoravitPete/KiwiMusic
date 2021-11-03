@@ -1,8 +1,15 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
+from .models import SongName
 
 
 def index(request):
-    return HttpResponse("Welcome to Home page of KiwiMusic.")
+    song_list = SongName.objects.all()
+    context = {
+        'song_list': song_list,
+    }
+    return render(request, 'Home/index.html', context)
 
 
 def detail(request, song_name):

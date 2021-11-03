@@ -3,7 +3,6 @@ from django.db import models
 
 class SongName(models.Model):
     song_name = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return self.song_name
@@ -15,4 +14,11 @@ class BillBoard(models.Model):
 
     def __str__(self):
         return self.billboard
+
+
+class SongType(models.Model):
+    song_type = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.song_type
 
