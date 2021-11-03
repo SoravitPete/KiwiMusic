@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% if song_list %}
+    {% if type_list %}
     <ul>
-        {% for each_song in song_list %}
-        <li><a href="/home/{{ each_song.song_name }}/">{{ each_song.song_name }}</a></li>
+        {% for each_song in type_list %}
+        <li><a href="/home/{{ each_song.song_type }}/">{{ each_song.song_type }}</a></li>
         {% endfor %}
     </ul>
     {% else %}

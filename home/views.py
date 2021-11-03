@@ -1,19 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import SongName
+from .models import SongName, SongType
 
 
 def index(request):
-    song_list = SongName.objects.all()
+    type_list = SongType.objects.all()
     context = {
-        'song_list': song_list,
+        'type_list': type_list,
     }
     return render(request, 'Home/index.html', context)
 
 
-def detail(request, song_name):
-    return HttpResponse("You're looking at %s details." % song_name)
+def detail(request, song_type):
+    return HttpResponse("You're looking at %s details." % song_type)
 
 
 def billboard(request):
