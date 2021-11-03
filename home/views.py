@@ -12,8 +12,14 @@ def index(request):
     return render(request, 'Home/index.html', context)
 
 
-def detail(request, song_type):
-    return HttpResponse("You're looking at %s details." % song_type)
+def list_song(request, song_type):
+    song_type = SongType.objects.get(song_type=song_type)
+    song_name = song_type.songname_set.all()
+    context = {
+        "song_type": song_type,
+        "list_song": song_name,
+    }
+    return render(request, 'Home/list.html', context)
 
 
 def billboard(request):

@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% if type_list %}
-    <ul>
-        {% for each_song in type_list %}
-        <li><a href="/home/{{ each_song.song_type }}/">{{ each_song.song_type }}</a></li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>No any songs.</p>
-    {% endif %}
 </head>
 <body>
-
+{% if type_list %}
+<ul>
+    {% for each_song in type_list %}
+    <li><a href="/home/{{ each_song.song_type }}/">{{ each_song.song_type }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No any songs.</p>
+{% endif %}
 </body>
 </html>
