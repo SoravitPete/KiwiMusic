@@ -1,0 +1,46 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #56FCBA">
+        <div class="container-fluid">
+            <a class="navbar-brand">KiwiMusic</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"
+                 style="text-decoration: none;color: black; font-size: large ">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Wiki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <ul>
+        <li><h4>Categories</h4></li>
+    </ul>
+    {% if type_list %}
+    <ul>
+        {% for each_song in type_list %}
+        <li><a href="/home/{{ each_song.song_type }}/">{{ each_song.song_type }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No any songs.</p>
+    {% endif %}
+</head>
+<body>
+<ul>
+    <li><a class="btn btn-success" href="/home/billboard/">BillBoard</a></li>
+</ul>
+</body>
+</html>
