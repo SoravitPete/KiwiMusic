@@ -51,3 +51,12 @@ def blog_page(request, blog_name, person_name):
         'message_text': message_text,
     }
     return render(request, 'blog/blogpage.html', context)
+
+
+def create_blog(request):
+    if request.method == "POST":
+        name = request.POST.get("title")
+        create = BlogName(blog_name=name)
+        create.save()
+    context = {}
+    return render(request, "blog/createblog.html", context)
