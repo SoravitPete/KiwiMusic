@@ -1,3 +1,15 @@
 from django.db import models
 
-# Create your models here.
+
+class BlogTopic(models.Model):
+    blog_topic = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.blog_topic
+
+
+class BlogComment(models.Model):
+    blog_comment = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.blog_comment
