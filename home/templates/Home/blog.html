@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h1>{{ blog_topic.blog_topic }}</h1>
+    <ul>
+        {% for blog in list_blog %}
+        <li><a href="/blog/{{ blog_topic.blog_topic }}/{{blog}}">{{ blog }}</a></li>
+        {% endfor %}
+    </ul>
+</head>
+<body>
+
+</body>
+</html>

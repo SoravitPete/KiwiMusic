@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import SongName, SongType
+from .models import SongName, SongType, BlogTopic
 
 
 def index(request):
