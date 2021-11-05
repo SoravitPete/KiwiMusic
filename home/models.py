@@ -33,7 +33,7 @@ class BlogName(models.Model):
 
 class BlogRoom(models.Model):
     text = models.CharField(max_length=200)
-    Room_name = models.ForeignKey(BlogName, on_delete=models.CASCADE)
+    room_name = models.ForeignKey(BlogName, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.text
+        return self.room_name
