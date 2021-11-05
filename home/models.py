@@ -24,8 +24,16 @@ class BillBoard(models.Model):
         return self.billboard
 
 
-class BlogTopic(models.Model):
-    blog_topic = models.CharField(max_length=200)
+class BlogName(models.Model):
+    blog_name = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.blog_topic
+        return self.blog_name
+
+
+class BlogRoom(models.Model):
+    text = models.CharField(max_length=200)
+    Room_name = models.ForeignKey(BlogName, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.text

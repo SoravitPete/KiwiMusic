@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import SongName, SongType, BlogTopic
+from .models import SongName, SongType, BlogName, BlogRoom
 
 
 def index(request):
@@ -37,8 +37,17 @@ def billboard(request):
 
 
 def blog_home(request):
-    return HttpResponse('You are at BlogHome Page')
+    blog_name = BlogName.objects.all()
+    context = {
+        'blog_name': blog_name,
+    }
+    return render(request, 'blog/bloghome.html', context)
 
 
 def blog_page(request, blog_name, person_name):
-    return HttpResponse(f"You are at Blog: {blog_name} Page. current User : {person_name}.")
+    message = BlogName.objects.get(blog_name=blog_name)
+    message_text = message.blogroom_set.all()
+    context = {
+        'message_text': message_text,
+    }
+    return render(request, 'blog/blogpage.html', context)
