@@ -34,3 +34,11 @@ def details(request, song_type, song_name):
 
 def billboard(request):
     return HttpResponse("You're looking at Billboard. \nThis is ranking for this week.")
+
+
+def blog_home(request):
+    return HttpResponse('You are at BlogHome Page')
+
+
+def blog_page(request, blog_name, person_name):
+    return HttpResponse(f"You are at Blog: {blog_name} Page. current User : {person_name}.")
