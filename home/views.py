@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import SongName, SongType
+from .models import SongName, SongType, BlogTopic
 
 
 def index(request):
@@ -34,3 +34,21 @@ def details(request, song_type, song_name):
 
 def billboard(request):
     return HttpResponse("You're looking at Billboard. \nThis is ranking for this week.")
+
+
+def blog_home(request, blog_topic):
+    blog_topic = blog_topic.blogtopic_set.all()
+
+    context = {
+        "blog_topic": blog_topic,
+    }
+    return render(request, 'Home/blog.html', context)
+
+
+def blog_page(request, blog_topic):
+    blog_topic = blog_topic.blogtopic_set.all()
+
+    context = {
+        "blog_topic": blog_topic,
+    }
+    return render(request, 'Home/blog.html', context)
