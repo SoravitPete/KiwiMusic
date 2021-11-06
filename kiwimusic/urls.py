@@ -6,5 +6,4 @@ from Home import views
 urlpatterns = [
     path('home/', include('Home.urls')),
     path('admin/', admin.site.urls),
-    path('blog/', include('Home.urls')),
 ]

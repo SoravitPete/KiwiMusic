@@ -1,6 +1,6 @@
 import requests
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import SongName, SongType, BlogName
 
@@ -80,5 +80,6 @@ def create_blog(request):
         name = request.POST.get("title")
         create = BlogName(blog_name=name)
         create.save()
+        return redirect('/home/blog/')
     context = {}
     return render(request, "blog/createblog.html", context)
