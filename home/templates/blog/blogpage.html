@@ -37,8 +37,16 @@
     {% else %}
     <p>No any comments yet.</p>
     {% endif %}
+    <div style="margin-top:30px;">
+    <form action='.' method="POST">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <div style="margin-top:10px;">
+            <button type="submit">Send</button>
+        </div>
+    </form>
+</div>
 </head>
 <body>
-
 </body>
 </html>

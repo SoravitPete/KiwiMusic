@@ -36,4 +36,4 @@ class BlogRoom(models.Model):
     room_name = models.ForeignKey(BlogName, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.room_name
+        return self.text

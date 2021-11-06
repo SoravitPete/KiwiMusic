@@ -1,8 +1,9 @@
 import requests
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from .forms import CommentForm
 
-from .models import SongName, SongType, BlogName
+from .models import SongName, SongType, BlogName, BlogRoom
 
 
 def index(request):
@@ -24,25 +25,25 @@ def list_song(request, song_type):
 
 
 def details(request, song_type, song_name):
-    # url = "https://unsa-unofficial-spotify-api.p.rapidapi.com/artist"
-    #
-    # querystring = {"id": "1mYsTxnqsietFxj1OgoGbG"}
-    #
-    # headers = {
-    #     'x-rapidapi-host': "unsa-unofficial-spotify-api.p.rapidapi.com",
-    #     'x-rapidapi-key': "480217cf18msh7fbc5f033e28fe5p17bafcjsn5bb4f9f93a60"
-    # }
-    #
-    # response = requests.request("GET", url, headers=headers, params=querystring)
-    #
-    # return HttpResponse(response.text)
-    song_type = SongType.objects.get(song_type=song_type)
-    song_name = SongName.objects.get(song_name=song_name)
-    context = {
-        "song_category": song_type,
-        "song_name": song_name
+    url = "https://spotifystefan-skliarovv1.p.rapidapi.com/getSingleAlbum"
+
+    payload = "accessToken=%3CREQUIRED%3E&albumId=%3CREQUIRED%3E"
+    headers = {
+        'content-type': "application/x-www-form-urlencoded",
+        'x-rapidapi-host': "Spotifystefan-skliarovV1.p.rapidapi.com",
+        'x-rapidapi-key': "480217cf18msh7fbc5f033e28fe5p17bafcjsn5bb4f9f93a60"
     }
-    return render(request, 'Home/details.html', context)
+
+    response = requests.request("POST", url, data=payload, headers=headers)
+
+    return HttpResponse(response.text)
+    # song_type = SongType.objects.get(song_type=song_type)
+    # song_name = SongName.objects.get(song_name=song_name)
+    # context = {
+    #     "song_category": song_type,
+    #     "song_name": song_name
+    # }
+    # return render(request, 'Home/details.html', context)
 
 
 def billboard(request):
@@ -67,10 +68,20 @@ def blog_home(request):
 
 
 def blog_page(request, blog_name, person_name):
-    message = BlogName.objects.get(blog_name=blog_name)
-    message_text = message.blogroom_set.all()
+    message_all = BlogName.objects.get(blog_name=blog_name)
+    message_text = message_all.blogroom_set.all()
+    comment_form = CommentForm(data=request.POST)
+    new_comment = None
+    if comment_form.is_valid():
+        new_comment = comment_form.save(commit=False)
+        new_comment.room_name = message_all
+        new_comment.save()
+    else:
+        comment_form = CommentForm()
     context = {
         'message_text': message_text,
+        'comment_form': comment_form,
+        'new_comment': new_comment,
     }
     return render(request, 'blog/blogpage.html', context)
 
