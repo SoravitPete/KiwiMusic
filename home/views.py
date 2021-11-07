@@ -2,14 +2,17 @@ import requests
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import CommentForm
+from django.contrib.auth.decorators import login_required
 
-from .models import SongName, SongType, BlogName, BlogRoom
+from .models import SongType, BlogName
 
 
 def index(request):
     type_list = SongType.objects.all()
+    user = request.user
     context = {
         'type_list': type_list,
+        'user': user,
     }
     return render(request, 'Home/index.html', context)
 
@@ -37,25 +40,9 @@ def details(request, song_type, song_name):
     response = requests.request("POST", url, data=payload, headers=headers)
 
     return HttpResponse(response.text)
-    # song_type = SongType.objects.get(song_type=song_type)
-    # song_name = SongName.objects.get(song_name=song_name)
-    # context = {
-    #     "song_category": song_type,
-    #     "song_name": song_name
-    # }
-    # return render(request, 'Home/details.html', context)
 
 
 def billboard(request):
-    # url = "https://top-10-spotify.p.rapidapi.com/"
-    #
-    # headers = {
-    #     'x-rapidapi-host': "top-10-spotify.p.rapidapi.com",
-    #     'x-rapidapi-key': "480217cf18msh7fbc5f033e28fe5p17bafcjsn5bb4f9f93a60"
-    # }
-    # response = requests.request("GET", url, headers=headers)
-    # return HttpResponse(response.text)
-    # return render(request, "Home/billboard.html", response)
     return HttpResponse("You are looking at billboard of this week")
 
 
@@ -86,6 +73,7 @@ def blog_page(request, blog_name, person_name):
     return render(request, 'blog/blogpage.html', context)
 
 
+@login_required()
 def create_blog(request):
     if request.method == "POST":
         name = request.POST.get("title")

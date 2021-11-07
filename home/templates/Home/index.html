@@ -22,6 +22,15 @@
                         <a class="nav-link" href="/home/">Home</a>
                     </li>
                 </ul>
+                <ul>
+                   {% if user.is_authenticated %}
+                    Current user: {{ user.username }}
+                    <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+                    <a class="btn btn-primary" href="{% url 'signup' %}">Sign Up</a>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </nav>
