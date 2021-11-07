@@ -1,10 +1,10 @@
 import requests
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .forms import CommentForm
+from .forms import CommentForm, Comment
 from django.contrib.auth.decorators import login_required
 
-from .models import SongType, BlogName
+from .models import SongType, BlogName, BlogRoom
 
 
 def index(request):
@@ -59,6 +59,14 @@ def blog_page(request, blog_name, person_name):
     message_text = message_all.blogroom_set.all()
     comment_form = CommentForm(data=request.POST)
     new_comment = None
+    comment = Comment(data=request.POST)
+    sub_comment = None
+    if comment.is_valid():
+        sub_comment = comment.save(commit=False)
+        sub_comment.name = BlogRoom.objects.get(room_name=message_all)
+        sub_comment.save()
+    else:
+        comment = Comment()
     if comment_form.is_valid():
         new_comment = comment_form.save(commit=False)
         new_comment.room_name = message_all
@@ -69,6 +77,8 @@ def blog_page(request, blog_name, person_name):
         'message_text': message_text,
         'comment_form': comment_form,
         'new_comment': new_comment,
+        'comment': comment,
+        'sub_comment': sub_comment,
     }
     return render(request, 'blog/blogpage.html', context)
 

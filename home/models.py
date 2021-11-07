@@ -37,3 +37,11 @@ class BlogRoom(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class BlogRoomComment(models.Model):
+    comment = models.CharField(max_length=200)
+    name = models.ForeignKey(BlogRoom, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.comment

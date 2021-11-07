@@ -32,20 +32,29 @@
     <ul>
         {% for each_message_blog in message_text %}
         <li><a>{{ each_message_blog.text }}</a></li>
+        <div style="margin-top:30px;">
+        <form action='.' method="POST">
+            {% csrf_token %}
+            {{ comment.as_p }}
+            <div style="margin-top:10px;">
+                <button type="submit">Comment</button>
+            </div>
+        </form>
+    </div>
         {% endfor %}
     </ul>
     {% else %}
     <p>No any comments yet.</p>
     {% endif %}
     <div style="margin-top:30px;">
-    <form action='.' method="POST">
-        {% csrf_token %}
-        {{ comment_form.as_p }}
-        <div style="margin-top:10px;">
-            <button type="submit">Send</button>
-        </div>
-    </form>
-</div>
+        <form action='.' method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <div style="margin-top:10px;">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
 </head>
 <body>
 </body>
