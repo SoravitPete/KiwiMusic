@@ -1,10 +1,10 @@
 import requests
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .forms import CommentForm, Comment
+from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
 
-from .models import SongType, BlogName, BlogRoom
+from .models import SongType, BlogName, BlogRoom, SongName
 
 
 def index(request):
@@ -28,18 +28,13 @@ def list_song(request, song_type):
 
 
 def details(request, song_type, song_name):
-    url = "https://spotifystefan-skliarovv1.p.rapidapi.com/getSingleAlbum"
-
-    payload = "accessToken=%3CREQUIRED%3E&albumId=%3CREQUIRED%3E"
-    headers = {
-        'content-type': "application/x-www-form-urlencoded",
-        'x-rapidapi-host': "Spotifystefan-skliarovV1.p.rapidapi.com",
-        'x-rapidapi-key': "480217cf18msh7fbc5f033e28fe5p17bafcjsn5bb4f9f93a60"
+    song_type = SongType.objects.get(song_type=song_type)
+    song_name = SongName.objects.get(song_name=song_name)
+    context = {
+        "song_category": song_type,
+        "song_name": song_name
     }
-
-    response = requests.request("POST", url, data=payload, headers=headers)
-
-    return HttpResponse(response.text)
+    return render(request, 'Home/details.html', context)
 
 
 def billboard(request):
@@ -59,14 +54,7 @@ def blog_page(request, blog_name, person_name):
     message_text = message_all.blogroom_set.all()
     comment_form = CommentForm(data=request.POST)
     new_comment = None
-    comment = Comment(data=request.POST)
-    sub_comment = None
-    if comment.is_valid():
-        sub_comment = comment.save(commit=False)
-        sub_comment.name = BlogRoom.objects.get(room_name=message_all)
-        sub_comment.save()
-    else:
-        comment = Comment()
+    user = request.user
     if comment_form.is_valid():
         new_comment = comment_form.save(commit=False)
         new_comment.room_name = message_all
@@ -77,17 +65,17 @@ def blog_page(request, blog_name, person_name):
         'message_text': message_text,
         'comment_form': comment_form,
         'new_comment': new_comment,
-        'comment': comment,
-        'sub_comment': sub_comment,
+        'user': user,
     }
     return render(request, 'blog/blogpage.html', context)
 
 
 @login_required()
 def create_blog(request):
+    user = request.user
     if request.method == "POST":
         name = request.POST.get("title")
-        create = BlogName(blog_name=name)
+        create = BlogName(blog_name=name, creator=user.username)
         create.save()
         return redirect('/home/blog/')
     context = {}

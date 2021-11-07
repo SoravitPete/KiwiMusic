@@ -26,6 +26,7 @@ class BillBoard(models.Model):
 
 class BlogName(models.Model):
     blog_name = models.CharField(max_length=200)
+    creator = models.CharField(max_length=200)
 
     def __str__(self):
         return self.blog_name
@@ -37,11 +38,3 @@ class BlogRoom(models.Model):
 
     def __str__(self):
         return self.text
-
-
-class BlogRoomComment(models.Model):
-    comment = models.CharField(max_length=200)
-    name = models.ForeignKey(BlogRoom, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.comment
