@@ -58,6 +58,7 @@ def blog_page(request, blog_name, person_name):
     if comment_form.is_valid():
         new_comment = comment_form.save(commit=False)
         new_comment.room_name = message_all
+        new_comment.user = user
         new_comment.save()
     else:
         comment_form = CommentForm()

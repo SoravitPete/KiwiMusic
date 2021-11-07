@@ -31,9 +31,9 @@
     {% if message_text %}
     <ul>
         {% for each_message_blog in message_text %}
-        <li><a>{{ each_message_blog.text }}</a></li>
-        {% endfor %}
-    </ul>
+        <li><a>{{ each_message_blog.user }} : {{ each_message_blog.text }}</a>
+            {% endfor %}
+        </ul>
     {% else %}
     <p>No any comments yet.</p>
     {% endif %}

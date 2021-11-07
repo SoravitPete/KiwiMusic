@@ -34,6 +34,7 @@ class BlogName(models.Model):
 
 class BlogRoom(models.Model):
     text = models.CharField(max_length=200)
+    user = models.CharField(max_length=200)
     room_name = models.ForeignKey(BlogName, on_delete=models.CASCADE)
 
     def __str__(self):
