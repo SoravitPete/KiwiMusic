@@ -1,10 +1,9 @@
-import requests
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
 
-from .models import SongType, BlogName, BlogRoom, SongName
+from .models import SongType, BlogName, SongName
 
 
 def index(request):
@@ -30,6 +29,7 @@ def list_song(request, song_type):
 def details(request, song_type, song_name):
     song_type = SongType.objects.get(song_type=song_type)
     song_name = SongName.objects.get(song_name=song_name)
+
     context = {
         "song_category": song_type,
         "song_name": song_name
@@ -39,6 +39,16 @@ def details(request, song_type, song_name):
 
 def billboard(request):
     return HttpResponse("You are looking at billboard of this week")
+
+
+def wiki_home(request):
+    type_list = SongType.objects.all()
+    user = request.user
+    context = {
+        'type_list': type_list,
+        'user': user,
+    }
+    return render(request, 'wiki/wiki.html', context)
 
 
 def blog_home(request):

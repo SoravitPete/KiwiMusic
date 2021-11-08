@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #56FCBA">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #56FCBA">
         <div class="container-fluid">
             <a class="navbar-brand">KiwiMusic</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent"
@@ -34,14 +34,19 @@
             </div>
         </div>
     </nav>
-    <h1>{{ song_type.song_type }}</h1>
     <ul>
-        {% for song in list_song %}
-        <li><a href="/home/wiki/{{ song_type.song_type }}/{{song}}">{{ song }}</a></li>
+        <h4>Categories</h4>
+    </ul>
+    {% if type_list %}
+    <ul>
+        {% for each_song in type_list %}
+        <li><a href="/home/wiki/{{ each_song.song_type }}/">{{ each_song.song_type }}</a></li>
         {% endfor %}
     </ul>
+    {% else %}
+    <p>No any songs.</p>
+    {% endif %}
 </head>
 <body>
-
 </body>
 </html>

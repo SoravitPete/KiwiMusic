@@ -16,6 +16,17 @@ class SongName(models.Model):
         return self.song_name
 
 
+class SongDetails(models.Model):
+    song_name = models.ForeignKey(SongName, on_delete=models.CASCADE)
+    artist_name = models.CharField(max_length=200)
+    released = models.CharField(max_length=200)
+    composer = models.CharField(max_length=200)
+    text = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.text
+
+
 class BillBoard(models.Model):
     billboard = models.CharField(max_length=200)
     place = models.IntegerField(default=0)
