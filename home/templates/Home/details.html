@@ -1,8 +1,47 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <h1>{{ song_name }}</h1>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #56FCBA">
+        <div class="container-fluid">
+            <a class="navbar-brand">KiwiMusic</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"
+                 style="text-decoration: none;color: black; font-size: large ">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/blog/">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/wiki/">Wiki</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    {% if user.is_authenticated %}
+                    Your profile: {{ user.username }}
+                    <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+                    <a class="btn btn-primary" href="{% url 'signup' %}">Register</a>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1>{{ song_name.song_name }}</h1>
+    <ul>
+        {% for each_song_details in song_details %}
+        <li><a>Artist_name : {{ each_song_details.artist_name }}</a>
+        <li><a>Released : {{ each_song_details.released }}</a>
+        <li><a>Composer : {{ each_song_details.composer }}</a>
+            {% endfor %}
+    </ul>
 </head>
 <body>
 

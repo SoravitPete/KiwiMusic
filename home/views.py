@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .forms import CommentForm
+from .forms import CommentForm, Comment
 from django.contrib.auth.decorators import login_required
 
 from .models import SongType, BlogName, SongName
@@ -29,10 +29,25 @@ def list_song(request, song_type):
 def details(request, song_type, song_name):
     song_type = SongType.objects.get(song_type=song_type)
     song_name = SongName.objects.get(song_name=song_name)
+    song_details = song_name.songdetails_set.all()
+    comment_form = Comment(data=request.POST)
+    new_comment = None
+    user = request.user
+    if comment_form.is_valid():
+        new_comment = comment_form.save(commit=False)
+        new_comment.song_name = song_name
+        new_comment.user = user
+        new_comment.save()
+    else:
+        comment_form = Comment()
 
     context = {
         "song_category": song_type,
-        "song_name": song_name
+        "song_name": song_name,
+        "song_details": song_details,
+        "new_comment": new_comment,
+        "comment_form": comment_form,
+        'user': user,
     }
     return render(request, 'Home/details.html', context)
 
