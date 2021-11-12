@@ -36,6 +36,7 @@ class BillBoard(models.Model):
 
 
 class BlogName(models.Model):
+    pub_date = models.DateTimeField('date published')
     blog_name = models.CharField(max_length=200)
     creator = models.CharField(max_length=200)
 

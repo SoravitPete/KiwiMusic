@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import CommentForm, Comment
@@ -101,7 +102,7 @@ def create_blog(request):
     user = request.user
     if request.method == "POST":
         name = request.POST.get("title")
-        create = BlogName(blog_name=name, creator=user.username)
+        create = BlogName(blog_name=name, creator=user.username, pub_date=timezone.now())
         create.save()
         return redirect('/home/blog/')
     context = {}

@@ -42,6 +42,7 @@
         {% for each_name_blog in blog_name %}
         <li><a href="/home/blog/{{ each_name_blog.blog_name }}/user_name/">{{ each_name_blog.blog_name }}</a></li>
         <a>created by {{ each_name_blog.creator }}</a>
+        <a>Date {{ each_name_blog.pub_date }}</a>
         {% endfor %}
     </ul>
     {% else %}
