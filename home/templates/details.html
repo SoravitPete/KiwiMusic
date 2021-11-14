@@ -9,46 +9,46 @@
     <link rel="stylesheet" href="{% static 'detail.css' %}" type="text/css" id="applicationStylesheet">
     <script id="applicationScript" type="text/javascript" src="{% static 'page.js' %}"></script>
     <title>Detail page</title>
-    <div id="Detail_page">
-        <svg class="Detail_white_rectangle">
-            <rect id="Detail_white_rectangle" rx="36" ry="36" x="0" y="0" width="1612" height="1562"></rect>
-        </svg>
-        <div>
-            <nav>
-                <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
-                     srcset={% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}>
-                <ul>
-                    <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
-                        <span>Home</span>
-                    </li>
-                    <li id="blog" onclick="application.goToTargetView(event)" style="display: inline-block">
-                        <span>Blog</span>
-                    </li>
-                    <li id="wiki" onclick="application.goToTargetView(event)" style="display: inline-block">
-                        <span>Wiki</span>
-                    </li>
-                </ul>
-                <div id="Group_1" style="top: 110px">
-                    {% if user.is_authenticated %}
-                    Your profile: {{ user.username }}
-                    <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
-                    {% else %}
-                    <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
-                    <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
-                    {% endif %}
-                </div>
-            </nav>
-            </head>
+</head>
 <body>
 {% block content %}
-<h1>{{ song_name.song_name }}</h1>
-<ul>
-    {% for each_song_details in song_details %}
-    <li><a>Artist_name : {{ each_song_details.artist_name }}</a>
-    <li><a>Released : {{ each_song_details.released }}</a>
-    <li><a>Composer : {{ each_song_details.composer }}</a>
-        {% endfor %}
-</ul>
-{% endblock %}
+<div id="Detail_page">
+    <svg class="Detail_white_rectangle">
+        <rect id="Detail_white_rectangle" rx="36" ry="36" x="0" y="0" width="1612" height="1562"></rect>
+    </svg>
+    <div>
+        <nav>
+            <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
+                 srcset={% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}>
+            <ul>
+                <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Home</span>
+                </li>
+                <li id="blog" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Blog</span>
+                </li>
+                <li id="wiki" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Wiki</span>
+                </li>
+            </ul>
+            <div id="Group_1" style="top: 110px">
+                {% if user.is_authenticated %}
+                Your profile: {{ user.username }}
+                <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
+                {% else %}
+                <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
+                <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
+                {% endif %}
+            </div>
+        </nav>
+        <h1>{{ song_name.song_name }}</h1>
+        <ul>
+            {% for each_song_details in song_details %}
+            <li><a>Artist_name : {{ each_song_details.artist_name }}</a>
+            <li><a>Released : {{ each_song_details.released }}</a>
+            <li><a>Composer : {{ each_song_details.composer }}</a>
+                {% endfor %}
+        </ul>
+        {% endblock %}
 </body>
 </html>
