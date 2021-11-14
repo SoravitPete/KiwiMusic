@@ -14,7 +14,7 @@ def index(request):
         'type_list': type_list,
         'user': user,
     }
-    return render(request, 'Home/index.html', context)
+    return render(request, '../templates/index.html', context)
 
 
 def list_song(request, song_type):
@@ -24,7 +24,7 @@ def list_song(request, song_type):
         "song_type": song_type,
         "list_song": song_name,
     }
-    return render(request, 'Home/list.html', context)
+    return render(request, '../templates/list.html', context)
 
 
 def details(request, song_type, song_name):
@@ -50,7 +50,7 @@ def details(request, song_type, song_name):
         "comment_form": comment_form,
         'user': user,
     }
-    return render(request, 'Home/details.html', context)
+    return render(request, '../templates/details.html', context)
 
 
 def billboard(request):
@@ -64,7 +64,7 @@ def wiki_home(request):
         'type_list': type_list,
         'user': user,
     }
-    return render(request, 'wiki/wiki.html', context)
+    return render(request, '../templates/wiki.html', context)
 
 
 def blog_home(request):
@@ -72,7 +72,7 @@ def blog_home(request):
     context = {
         'blog_name': blog_name,
     }
-    return render(request, 'blog/bloghome.html', context)
+    return render(request, '../templates/bloghome.html', context)
 
 
 def blog_page(request, blog_name, person_name):
@@ -94,7 +94,7 @@ def blog_page(request, blog_name, person_name):
         'new_comment': new_comment,
         'user': user,
     }
-    return render(request, 'blog/blogpage.html', context)
+    return render(request, '../templates/blogpage.html', context)
 
 
 @login_required()
@@ -106,4 +106,4 @@ def create_blog(request):
         create.save()
         return redirect('/home/blog/')
     context = {}
-    return render(request, "blog/createblog.html", context)
+    return render(request, "../templates/createblog.html", context)

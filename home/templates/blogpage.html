@@ -34,19 +34,28 @@
             </div>
         </div>
     </nav>
+    <ul>
+        <h4>All Blog message</h4>
+    </ul>
+    {% if message_text %}
+    <ul>
+        {% for each_message_blog in message_text %}
+        <li><a>{{ each_message_blog.user }} : {{ each_message_blog.text }}</a>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p>No any comments yet.</p>
+    {% endif %}
+    <div style="margin-top:30px;">
+        <form action='blog' method="POST">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <div style="margin-top:10px;">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
 </head>
 <body>
-<h2>Create Blog</h2>
-<div style="margin-top:30px;">
-    <form action='.' method="POST">
-        {% csrf_token %}
-        <div>
-            <input type='text' name="title" placeholder="Your Blog Name"/>
-        </div>
-        <div style="margin-top:10px;">
-            <button type="submit">Create Blog</button>
-        </div>
-    </form>
-</div>
 </body>
 </html>
