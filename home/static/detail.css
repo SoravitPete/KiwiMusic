@@ -49,7 +49,7 @@
 	width: 1612px;
 	height: 1562px;
 	left: 154px;
-	top: 988px;
+	top: 400px;
 }
 #detail {
 	left: 1047px;
@@ -69,6 +69,62 @@
 	font-size: 55px;
 	color: rgba(255,255,255,1);
 }
+
+#home {
+	left: 1047px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: ;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+#blog {
+	left: 1222px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 90px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: blog;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+#wiki {
+	left: 1364px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 84px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: wiki;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+
 #logo-banner {
 	position: absolute;
 	width: 535px;
@@ -84,11 +140,15 @@
 	left: 1517px;
 	top: 105px;
 	overflow: visible;
+}
 
-#logo {
+#Song_name {
 	position: absolute;
-	width: 483px;
-	height: 483px;
-	left: 719px;
-	top: 379px;
+	width: 206px;
+	height: 48px;
+	left: 150px;
+	top: 260px;
 	overflow: visible;
+}
+
+

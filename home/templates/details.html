@@ -41,6 +41,9 @@
                 {% endif %}
             </div>
         </nav>
+    </div>
+</div>
+    <div id="Song_name">
         <h1>{{ song_name.song_name }}</h1>
         <ul>
             {% for each_song_details in song_details %}
@@ -49,6 +52,7 @@
             <li><a>Composer : {{ each_song_details.composer }}</a>
                 {% endfor %}
         </ul>
+    </div>
         {% endblock %}
 </body>
 </html>
