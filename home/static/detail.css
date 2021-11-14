@@ -45,11 +45,11 @@
 }
 .Detail_white_rectangle {
 	position: absolute;
-	overflow: visible;
-	width: 1612px;
-	height: 1562px;
-	left: 154px;
-	top: 400px;
+    overflow: visible;
+    width: 1612px;
+    height: 2328px;
+    left: 154px;
+    top: 226px;
 }
 #detail {
 	left: 1047px;
@@ -144,11 +144,37 @@
 
 #Song_name {
 	position: absolute;
-	width: 206px;
-	height: 48px;
-	left: 150px;
-	top: 260px;
+	width: 800px;
+	height: 200px;
+	left: 180px;
+	top: 240px;
 	overflow: visible;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
 }
 
+#Line {
+	fill: rgba(60,60,60,1);
+}
+.Line {
+	position: absolute;
+	overflow: visible;
+	width: 1000px;
+	height: 1px;
+	left: 0px;
+	top: 75px;
+}
+
+#Song_detail {
+	position: absolute;
+	width: 1000px;
+	height: 1000px;
+	left: 0px;
+	top: 100px;
+	overflow: visible;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+}
 

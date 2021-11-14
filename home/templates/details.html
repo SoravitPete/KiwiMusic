@@ -33,7 +33,7 @@
             </ul>
             <div id="Group_1" style="top: 110px">
                 {% if user.is_authenticated %}
-                Your profile: {{ user.username }}
+                <h4 style="text-decoration: none;color: white">Your profile: {{ user.username }}</h4>
                 <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
                 {% else %}
                 <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
@@ -44,13 +44,23 @@
     </div>
 </div>
     <div id="Song_name">
-        <h1>{{ song_name.song_name }}</h1>
+        <svg class="Line">
+        <rect id="Line"rx="36" ry="36" x="0" y="0" width="1180" height="2"></rect>
+        <h1 style="text-decoration: none;color: #36413F">{{ song_name.song_name }}</h1>
         <ul>
+            <div id="Song_detail">
+            <h3 style="text-decoration: none;color: #36413F">Artist : </h3>
+            <h3 style="text-decoration: none;color: #36413F">Released : </h3>
+            <h3 style="text-decoration: none;color: #36413F">Composer : </h3>
             {% for each_song_details in song_details %}
-            <li><a>Artist_name : {{ each_song_details.artist_name }}</a>
-            <li><a>Released : {{ each_song_details.released }}</a>
-            <li><a>Composer : {{ each_song_details.composer }}</a>
+            <h3 style="text-decoration: none;color: #36413F">Artist : </h3>
+                <li><a>{{ each_song_details.artist_name }}</a></li>
+            <h3 style="text-decoration: none;color: #36413F">Released : </h3>
+                <li><a>{{ each_song_details.released }}</a></li>
+            <h3 style="text-decoration: none;color: #36413F">Composer : </h3>
+                <li><a>{{ each_song_details.composer }}</a></li>
                 {% endfor %}
+            </div>
         </ul>
     </div>
         {% endblock %}
