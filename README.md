@@ -26,4 +26,8 @@ about music to exchange ideas because in the world of music new things are happe
 
 - [Iteration2](../../wiki/Iteration-2)
 
+- [User authentication](../../wiki/User-authentication)
+
+- [Iteration4](../../wiki/Iteration-4)
+
 <div align="center"><img src="media/logo-colored.png" width="300" height="300"></div>
