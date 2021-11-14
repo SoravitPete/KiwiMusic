@@ -1,0 +1,53 @@
+#Detail_page {
+	position: absolute;
+	width: 1920px;
+	height: 2713px;
+	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
+	overflow: hidden;
+	--web-view-name: Detail page;
+	--web-view-id: Detail_page;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#Detail_white_rectangle {
+	fill: rgba(255,255,255,1);
+}
+.Detail_white_rectangle {
+	position: absolute;
+	overflow: visible;
+	width: 1612px;
+	height: 1562px;
+	left: 154px;
+	top: 988px;
+}
+#detail {
+	left: 1047px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: ;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
