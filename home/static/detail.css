@@ -1,0 +1,154 @@
+.mediaViewInfo {
+	--web-view-name: Detail page;
+	--web-view-id: Detail_page;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Detail_page;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Detail_page {
+	position: absolute;
+	width: 1920px;
+	height: 2713px;
+	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
+	overflow: hidden;
+	--web-view-name: Detail page;
+	--web-view-id: Detail_page;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+#Detail_white_rectangle {
+	fill: rgba(255,255,255,1);
+}
+.Detail_white_rectangle {
+	position: absolute;
+	overflow: visible;
+	width: 1612px;
+	height: 1562px;
+	left: 154px;
+	top: 400px;
+}
+#detail {
+	left: 1047px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: ;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+
+#home {
+	left: 1047px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: ;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+#blog {
+	left: 1222px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 90px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: blog;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+#wiki {
+	left: 1364px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 84px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: wiki;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+
+#logo-banner {
+	position: absolute;
+	width: 535px;
+	height: 301px;
+	left: 154px;
+	top: -22px;
+	overflow: visible;
+}
+#Group_1 {
+	position: absolute;
+	width: 206px;
+	height: 48px;
+	left: 1517px;
+	top: 105px;
+	overflow: visible;
+}
+
+#Song_name {
+	position: absolute;
+	width: 206px;
+	height: 48px;
+	left: 150px;
+	top: 260px;
+	overflow: visible;
+}
+
+
