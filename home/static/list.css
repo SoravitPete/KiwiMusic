@@ -1,6 +1,6 @@
 .mediaViewInfo {
-	--web-view-name: Home page;
-	--web-view-id: Home_page;
+	--web-view-name: S_List page;
+	--web-view-id: S_List_page;
 	--web-scale-to-fit: true;
 	--web-scale-to-fit-type: width;
 	--web-enable-scale-up: true;
@@ -8,7 +8,7 @@
 	--web-enable-deep-linking: true;
 }
 :root {
-	--web-view-ids: Home_page;
+	--web-view-ids: S_List_page;
 }
 * {
 	margin: 0;
@@ -16,14 +16,14 @@
 	box-sizing: border-box;
 	border: none;
 }
-#Home_page {
+#S_List_page {
 	position: absolute;
 	width: 1920px;
 	height: 2713px;
 	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
 	overflow: hidden;
-	--web-view-name: Home page;
-	--web-view-id: Home_page;
+	--web-view-name: S_List page;
+	--web-view-id: S_List_page;
 	--web-scale-to-fit: true;
 	--web-scale-to-fit-type: width;
 	--web-enable-scale-up: true;
@@ -40,16 +40,34 @@
 	}
 
 }
-#Home_white_rectangle {
+#S_List_white_rectangle {
 	fill: rgba(255,255,255,1);
 }
-.Home_white_rectangle {
+.S_List_white_rectangle {
+	position: absolute;
+    overflow: visible;
+    width: 1612px;
+    height: 2328px;
+    left: 154px;
+    top: 226px;
+}
+#list {
+	left: 1047px;
+	top: 95px;
 	position: absolute;
 	overflow: visible;
-	width: 1612px;
-	height: 1562px;
-	left: 154px;
-	top: 988px;
+	width: 123px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: ;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
 }
 
 #home {
@@ -123,180 +141,84 @@
 	top: 105px;
 	overflow: visible;
 }
-#Login_rectangle {
-	fill: rgba(255,255,255,1);
-}
-.Login_rectangle {
-	filter: drop-shadow(-5px -5px 15px rgba(16, 187, 119, 0.471));
+
+#Song_type {
 	position: absolute;
+	width: 900px;
+	height: 300px;
+	left: 670px;
+	top: 240px;
 	overflow: visible;
-	width: 148px;
-	height: 93px;
-	left: 0;
-	top: 0;
-}
-#Register_rectangle {
-	fill: rgba(66,180,127,1);
-}
-.Register_rectangle {
-	filter: drop-shadow(7px -5px 15px rgba(16, 187, 119, 0.471));
-	position: absolute;
-	overflow: visible;
-	width: 148px;
-	height: 93px;
-	left: 103px;
-	top: 0;
-}
-#Login {
-	left: 27px;
-	top: 8px;
-	position: absolute;
-	overflow: visible;
-	width: 49px;
-	white-space: nowrap;
-	text-align: left;
 	font-family: Dosis;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 24px;
-	color: rgba(62,161,95,1);
-}
-#Register {
-	left: 117px;
-	top: 8px;
-	position: absolute;
-	overflow: visible;
-	width: 72px;
-	white-space: nowrap;
-	text-align: left;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: rgba(255,255,255,1);
-}
-#WELCOME_TO {
-	left: 716px;
-	top: 279px;
-	position: absolute;
-	overflow: visible;
-	width: 489px;
-	white-space: nowrap;
-	text-align: left;
-	font-family: Junegull;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 91px;
-	color: rgba(255,255,255,1);
-}
-#logo {
-	position: absolute;
-	width: 483px;
-	height: 483px;
-	left: 719px;
-	top: 379px;
-	overflow: visible;
-}
-#Category {
-	position: absolute;
-	width: 224px;
-	height: 429px;
-	left: 198px;
-	top: 1171px;
-	overflow: visible;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-#Categories {
-	left: 40px;
-	top: -40px;
-	position: absolute;
-	overflow: visible;
-	width: 135px;
-	white-space: nowrap;
-	text-align: left;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 35px;
-	color: rgba(54,65,63,1);
+    font-size: 70px;
 }
 
-#song_type {
-	left: 10px;
-	top: 10px;
+#Search_icon_Class {
+	position: absolute;
+	width: 37px;
+	height: 42px;
+	left: 570px;
+	top: 360px;
+	overflow: visible;
+}
+#Search_Class input[type=text]{
+    padding: 8px;
+	left: 620px;
+	top: 350px;
 	position: absolute;
 	overflow: visible;
-	width: 135px;
+	width: 380px;
 	white-space: nowrap;
 	text-align: left;
 	font-family: Dosis;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 35px;
-	color: rgba(54,65,63,1);
-}
-#categories_icon {
-	position: absolute;
-	width: 36px;
-	height: 40px;
-	left: 0;
-	top: -30px;
-	overflow: visible;
+	font-size: 31px;
+	background-color:#D8D8D8;
+    color:black;
+	border: none;
 }
 
-#Trending {
-	position: absolute;
-	width: 153px;
-	height: 44px;
-	left: 198px;
-	top: 1112px;
-	overflow: visible;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
+#Line {
+	fill: rgba(60,60,60,1);
 }
-#Trending_ {
-	left: 40px;
-	top: -30px;
+.Line {
 	position: absolute;
 	overflow: visible;
-	width: 111px;
-	white-space: nowrap;
-	text-align: left;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 35px;
-	color: rgba(54,65,63,1);
+	width: 400px;
+	height: 1px;
+	left: 630px;
+	top: 330px;
 }
-#trending_icon {
+
+#The_List{
 	position: absolute;
-	width: 39px;
-	height: 43px;
+	width: 1000px;
+	height: 1000px;
 	left: 0px;
-	top: -30px;
+	top: 120px;
 	overflow: visible;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
 }
 
-#Billboard {
+#Songs_Bar {
 	position: absolute;
 	width: 1221px;
 	height: 607px;
-	left: 450px;
-	top: 1090px;
+	left: 220px;
+	top: 450px;
 	overflow: visible;
 }
 
-#billboard_rectangle_bn {
-	fill: url(#billboard_rectangle_bn);
+#songs_bar_rectangle_bn {
+	fill: url(#songs_bar_rectangle_bn);
 }
-.billboard_rectangle_bn {
+.songs_bar_rectangle_bn {
 	position: absolute;
 	overflow: visible;
 	width: 1221px;
@@ -304,9 +226,9 @@
 	left: 0;
 	top: 0;
 }
-#billboard {
+#songs_bar {
 	left: 37px;
-	top: 17px;
+	top: 5px;
 	position: absolute;
 	overflow: visible;
 	width: 223px;
@@ -316,5 +238,5 @@
 	font-style: normal;
 	font-weight: normal;
 	font-size: 51px;
-	color: rgba(255,255,255,1);
+	color: rgba(255, 255, 255, 1);
 }
