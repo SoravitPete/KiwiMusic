@@ -1,0 +1,359 @@
+.mediaViewInfo {
+	--web-view-name: Blog page;
+	--web-view-id: Blog_page;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Blog_page;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+@keyframes fadein {
+
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+
+}
+
+#home {
+	left: 1047px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: ;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+#blog {
+	left: 1222px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 90px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: blog;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+#wiki {
+	left: 1364px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 84px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: wiki;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+
+#logo-banner {
+	position: absolute;
+	width: 535px;
+	height: 301px;
+	left: 154px;
+	top: -22px;
+	overflow: visible;
+}
+#Group_1 {
+	position: absolute;
+	width: 206px;
+	height: 48px;
+	left: 1517px;
+	top: 105px;
+	overflow: visible;
+}
+#Login_rectangle {
+	fill: rgba(255,255,255,1);
+}
+.Login_rectangle {
+	filter: drop-shadow(-5px -5px 15px rgba(16, 187, 119, 0.471));
+	position: absolute;
+	overflow: visible;
+	width: 148px;
+	height: 93px;
+	left: 0;
+	top: 0;
+}
+#Register_rectangle {
+	fill: rgba(66,180,127,1);
+}
+.Register_rectangle {
+	filter: drop-shadow(7px -5px 15px rgba(16, 187, 119, 0.471));
+	position: absolute;
+	overflow: visible;
+	width: 148px;
+	height: 93px;
+	left: 103px;
+	top: 0;
+}
+#Login {
+	left: 27px;
+	top: 8px;
+	position: absolute;
+	overflow: visible;
+	width: 49px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(62,161,95,1);
+}
+#Register {
+	left: 117px;
+	top: 8px;
+	position: absolute;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(255,255,255,1);
+}
+
+#Blog_page{
+	position: absolute;
+	width: 1920px;
+	height: 2713px;
+	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
+	overflow: hidden;
+	--web-view-name: Home page;
+	--web-view-id: Home_page;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Blog_white_rectangle {
+	fill: rgba(255,255,255,1);
+}
+#Blog_white_rectangle {
+	position: absolute;
+	overflow: visible;
+	width: 1612px;
+	height: 2328px;
+	left: 154px;
+	top: 226px;
+}
+#Blog_ci_Class {
+	left: 896px;
+	top: 264px;
+	position: absolute;
+	overflow: visible;
+	width: 130px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 80px;
+	color: rgba(54,65,63,1);
+}
+#Search_icon_Class {
+	position: absolute;
+	width: 37px;
+	height: 42px;
+	left: 750px;
+	top: 408px;
+	overflow: visible;
+}
+#Search_Class input[type=text]{
+    padding: 8px;
+	left: 800px;
+	top: 400px;
+	position: absolute;
+	overflow: visible;
+	width: 380px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 31px;
+	background-color:#D8D8D8;
+    color:black;
+	border: none;
+}
+#Create_blog_Class {
+	position: absolute;
+	width: 226px;
+	height: 68px;
+	left: 895px;
+	top: 490px;
+	overflow: visible;
+}
+
+#Category {
+	position: absolute;
+	width: 224px;
+	height: 429px;
+	left: 198px;
+	top: 660px;
+	overflow: visible;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Categories {
+	left: 40px;
+	top: -40px;
+	position: absolute;
+	overflow: visible;
+	width: 135px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(54,65,63,1);
+}
+
+#song_type {
+	left: 15px;
+	top: 10px;
+	position: absolute;
+	overflow: visible;
+	width: 135px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(54,65,63,1);
+}
+#categories_icon {
+	position: absolute;
+	width: 36px;
+	height: 40px;
+	left: 0;
+	top: -30px;
+	overflow: visible;
+}
+
+#Trending {
+	position: absolute;
+	width: 153px;
+	height: 44px;
+	left: 198px;
+	top: 600px;
+	overflow: visible;
+	--web-scale-to-fit: true;
+	--web-scale-to-fit-type: width;
+	--web-enable-scale-up: true;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Trending_ {
+	left: 40px;
+	top: -30px;
+	position: absolute;
+	overflow: visible;
+	width: 111px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(54,65,63,1);
+}
+#trending_icon {
+	position: absolute;
+	width: 39px;
+	height: 43px;
+	left: 0px;
+	top: -30px;
+	overflow: visible;
+}
+
+#Blog_Bar {
+	position: absolute;
+	width: 1221px;
+	height: 607px;
+	left: 450px;
+	top: 560px;
+	overflow: visible;
+}
+
+#blogbar_rectangle_bn {
+	fill: url(#blogbar_rectangle_bn);
+}
+.blogbar_rectangle_bn {
+	position: absolute;
+	overflow: visible;
+	width: 1221px;
+	height: 83px;
+	left: 0;
+	top: 0;
+}
+#blogbar {
+	left: 37px;
+	top: 5px;
+	position: absolute;
+	overflow: visible;
+	width: 223px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Junegull;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 51px;
+	color: rgba(255,255,255,1);
+}
+#blog_name {
+	position: absolute;
+	left: 450px;
+	top: 660px;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	overflow: visible;
+}
+
