@@ -1,6 +1,6 @@
 .mediaViewInfo {
-	--web-view-name: Wiki page;
-	--web-view-id: Wiki_page;
+	--web-view-name: S_List page;
+	--web-view-id: S_List_page;
 	--web-scale-to-fit: true;
 	--web-scale-to-fit-type: width;
 	--web-enable-scale-up: true;
@@ -8,7 +8,7 @@
 	--web-enable-deep-linking: true;
 }
 :root {
-	--web-view-ids: Wiki_page;
+	--web-view-ids: S_List_page;
 }
 * {
 	margin: 0;
@@ -16,14 +16,14 @@
 	box-sizing: border-box;
 	border: none;
 }
-#Wiki_page {
+#S_List_page {
 	position: absolute;
 	width: 1920px;
 	height: 2713px;
 	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
 	overflow: hidden;
-	--web-view-name: Wiki page;
-	--web-view-id: Wiki_page;
+	--web-view-name: S_List page;
+	--web-view-id: S_List_page;
 	--web-scale-to-fit: true;
 	--web-scale-to-fit-type: width;
 	--web-enable-scale-up: true;
@@ -40,10 +40,10 @@
 	}
 
 }
-#Wiki_white_rectangle {
+#S_List_white_rectangle {
 	fill: rgba(255,255,255,1);
 }
-.Wiki_white_rectangle {
+.S_List_white_rectangle {
 	position: absolute;
     overflow: visible;
     width: 1612px;
@@ -51,7 +51,7 @@
     left: 154px;
     top: 226px;
 }
-#wiki {
+#list {
 	left: 1047px;
 	top: 95px;
 	position: absolute;
@@ -142,11 +142,11 @@
 	overflow: visible;
 }
 
-#Categories {
+#Song_type {
 	position: absolute;
 	width: 900px;
 	height: 300px;
-	left: 640px;
+	left: 670px;
 	top: 240px;
 	overflow: visible;
 	font-family: Dosis;
@@ -193,7 +193,7 @@
 	top: 330px;
 }
 
-#Categories_list {
+#The_List{
 	position: absolute;
 	width: 1000px;
 	height: 1000px;
@@ -203,10 +203,10 @@
 	font-family: Dosis;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 40px;
+	font-size: 30px;
 }
 
-#Categories_Bar {
+#Songs_Bar {
 	position: absolute;
 	width: 1221px;
 	height: 607px;
@@ -215,10 +215,10 @@
 	overflow: visible;
 }
 
-#categories_bar_rectangle_bn {
-	fill: url(#categories_bar_rectangle_bn);
+#songs_bar_rectangle_bn {
+	fill: url(#songs_bar_rectangle_bn);
 }
-.categories_bar_rectangle_bn {
+.songs_bar_rectangle_bn {
 	position: absolute;
 	overflow: visible;
 	width: 1221px;
@@ -226,7 +226,7 @@
 	left: 0;
 	top: 0;
 }
-#categories_bar {
+#songs_bar {
 	left: 37px;
 	top: 5px;
 	position: absolute;
