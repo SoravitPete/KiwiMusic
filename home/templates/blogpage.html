@@ -36,49 +36,45 @@
             </ul>
             <div id="Group_1" style="top: 110px">
                 {% if user.is_authenticated %}
-                Your profile: {{ user.username }}
-                <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
+                    Your profile: {{ user.username }}
+                    <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
                 {% else %}
-                <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
-                <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
+                    <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
+                    <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
                 {% endif %}
             </div>
         </nav>
-            <div id="Blog_Bar">
-        <svg class="blogbar_rectangle_bn">
-            <linearGradient id="blogbar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
-                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
-                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
-            </linearGradient>
-            <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1421" height="83">
-            </rect>
-        </svg>
-        <div id="blogbar">
-            <span>All Blog Messages</span>
-        </div>
-    </div>
-
-        <div id="blog_message">
-            <div id="blog_comment">
-            {% if message_text %}
-            <ul>
-                {% for each_message_blog in message_text %}
-                <li><a>{{ each_message_blog.user }} : {{ each_message_blog.text }}</a>
-                    {% endfor %}
-            </ul>
-            {% else %}
-            <p>No any comments yet.</p>
-            {% endif %}
-                </div>
-            <div id="blog_message_button" style="margin-top:30px;">
-                <form action='blog' method="POST">
-                    {% csrf_token %}
-                    {{ comment_form.as_p }}
-                    <div style="margin-top:30px;">
-                        <button type="button" class="btn btn-success btn-lg">Send</button>
-                    </div>
-                </form>
+        <div id="Blog_Bar">
+            <svg class="blogbar_rectangle_bn">
+                <linearGradient id="blogbar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
+                    <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
+                    <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
+                </linearGradient>
+                <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1421" height="83"></rect>
+            </svg>
+            <div id="blogbar">
+                <span>Blog Messages</span>
             </div>
+        </div>
+        <div id="blog_message">
+            {% if message_text %}
+                <ul>
+                    {% for each_message_blog in message_text %}
+                        <li><a>{{ each_message_blog.user }} : {{ each_message_blog.text }}</a>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No any comments yet.</p>
+            {% endif %}
+        </div>
+        <div style="margin-top:30px;" id="blog_comment">
+            <form action='.' method="POST">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <div style="margin-top:10px;">
+                    <button type="submit" class="btn-success">Send</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

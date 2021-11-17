@@ -37,7 +37,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: ;
+	--web-action-target: ../../;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -55,7 +55,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: blog;
+	--web-action-target: ../;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -73,7 +73,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: wiki;
+	--web-action-target: ../../wiki;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;

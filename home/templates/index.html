@@ -37,7 +37,8 @@
                         <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
                     {% else %}
                         <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
-                        <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
+                        <a class="btn btn-lg btn-primary" href="{% url 'signup' %}"
+                           style="font-family: Dosis">Register</a>
                     {% endif %}
                 </div>
             </nav>
@@ -57,7 +58,8 @@
                 {% if type_list %}
                     <ul>
                         {% for each_song in type_list %}
-                            <li style="display: block"><a href="/home/wiki/{{ each_song.song_type }}/">{{ each_song.song_type }}</a></li>
+                            <li style="display: block"><a
+                                    href="/home/wiki/{{ each_song.song_type }}/">{{ each_song.song_type }}</a></li>
                         {% endfor %}
                     </ul>
                 {% else %}
@@ -69,9 +71,10 @@
             <div id="Trending_">
                 <span>Trending</span>
             </div>
-            <img id="trending_icon" src={% static 'media/trending_icon.png' %} srcset={% static 'media/trending_icon.png' %}, {% static 'media/trending_icon@2x.png' %}>
+            <img id="trending_icon"
+                 src={% static 'media/trending_icon.png' %} srcset={% static 'media/trending_icon.png' %}, {% static 'media/trending_icon@2x.png' %}>
         </div>
-    	<div id="Billboard">
+        <div id="Billboard">
             <svg class="billboard_rectangle_bn">
                 <linearGradient id="billboard_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
                     <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
@@ -80,10 +83,32 @@
                 <rect id="billboard_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1221" height="83">
                 </rect>
             </svg>
-            <div id="billboard">
+            <div id="billboard" style="top: 5px">
                 <span>billboard</span>
             </div>
-	    </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card" style="top: 100px">
+                        <img src="{% static 'media/billboard_pic.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="top: 100px">
+                        <img src="{% static 'media/billboard_pic.png' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 </body>

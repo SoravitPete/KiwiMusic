@@ -36,7 +36,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: ;
+	--web-action-target: ../../../;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -54,7 +54,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: blog;
+	--web-action-target: ../../;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -72,7 +72,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: wiki;
+	--web-action-target: ../../../wiki;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -211,18 +211,33 @@
 }
 #blog_message{
 	position: absolute;
-	overflow: visible;
-	width: 1001px;
-	height: 503px;
-	left: 290;
-	top: 420;
+	overflow: scroll;
+	width: 1400px;
+	height: 300px;
+	left: 260px;
+	top: 420px;
 	font-family: Dosis;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 51px;
+	font-size: 25px;
     color:black;
 }
 .btn-success {
-    padding: 10px 20px;
-    font-size: 30px;
-    border-radius: 10px;
+	padding: 10px 20px;
+	font-size: 30px;
+	border-radius: 10px;
+}
+#blog_comment {
+	left: 280px;
+	top: 725px;
+	position: absolute;
+	overflow: visible;
+	width: 135px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(54,65,63,1);
+}
