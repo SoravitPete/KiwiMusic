@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'list.css' %}" type="text/css" id="applicationStylesheet">
+    <script id="applicationScript" type="text/javascript" src="{% static 'page.js' %}"></script>
+    <title>Detail page</title>
+</head>
+<body>
+{% block content %}
+<div id="S_List_page">
+    <svg class="S_List_white_rectangle">
+        <rect id="S_List_white_rectangle" rx="36" ry="36" x="0" y="0" width="1612" height="1562"></rect>
+    </svg>
+    <div>
+        <nav>
+            <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
+                 srcset={% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}>
+            <ul>
+                <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <a class="nav-link" style="color: white" href="/home/">Home</a>
+                </li>
+                <li id="blog" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <a class="nav-link" style="color: white" href="/home/blog/">Blog</a>
+                </li>
+                <li id="wiki" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <a class="nav-link" style="color: white" href="/home/wiki/">Wiki</a>
+                </li>
+            </ul>
+            <div id="Group_1" style="top: 110px">
+                {% if user.is_authenticated %}
+                <h4 style="text-decoration: none;color: white">Your profile: {{ user.username }}</h4>
+                <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
+                {% else %}
+                <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
+                <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</div>
+<div id="Song_type">
+    <a>{{ song_type.song_type }}</a>
+    </div>
+<div id="Search_Class">
+        <input type="text" placeholder="Search...">
+    </div>
+<img id="Search_icon_Class" src="{% static 'media/Search_icon.png' %} "
+         srcset={% static 'media/Search_icon.png' %}, {% static 'media/Search_icon.png@2x.png' %}>
+<div id="Songs_Bar">
+        <svg class="songs_bar_rectangle_bn">
+            <linearGradient id="songs_bar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
+                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
+                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
+            </linearGradient>
+            <rect id="songs_bar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1080" height="83">
+            </rect>
+        </svg>
+        <div id="songs_bar">
+            <span>Songs</span>
+        </div>
+    <div id="The_List">
+        {% for song in list_song %}
+        <li><a href="/home/wiki/{{ song_type.song_type }}/{{song}}" style="text-decoration: none;color: #36413F">{{ song }}</a></li>
+        {% endfor %}
+            </div>
+</div>
+{% endblock %}
+</body>
+</html>

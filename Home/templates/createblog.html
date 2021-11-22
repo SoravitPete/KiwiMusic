@@ -1,0 +1,76 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../static/createblog.css"/>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'createblog.css' %}" type="text/css" id="applicationStylesheet">
+    <script id="applicationScript" type="text/javascript" src="{% static 'page.js' %}"></script>
+</head>
+<title>Create Blog</title>
+<body>
+<div id="Create_Blog_page">
+    <svg id="Blog_white_rectangle">
+        <rect id="Blog_white_rectangle" rx="36" ry="36" x="0" y="0" width="1612" height="1562"></rect>
+    </svg>
+    <div>
+        <nav>
+            <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
+                 srcset={% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}>
+            <ul>
+                <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Home</span>
+                </li>
+                <li id="blog" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Blog</span>
+                </li>
+                <li id="wiki" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Wiki</span>
+                </li>
+            </ul>
+            <div id="Group_1" style="top: 110px">
+                {% if user.is_authenticated %}
+                Your profile: {{ user.username }}
+                <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
+                {% else %}
+                <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
+                <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
+                {% endif %}
+            </div>
+        </nav>
+    <div id="Blog_Bar">
+        <svg class="blogbar_rectangle_bn">
+            <linearGradient id="blogbar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
+                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
+                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
+            </linearGradient>
+            <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1421" height="83">
+            </rect>
+        </svg>
+        <div id="blogbar">
+            <span>Create Your Own Blog</span>
+        </div>
+    </div>
+
+
+    <div id="Create_blog_class">
+        <form action='blog' method="POST">
+            {% csrf_token %}
+            <div id="Create_blog_bar">
+                <input type='text' name="title" placeholder="Say Something..."/>
+            </div>
+            <div id="Create_blog_button">
+                <button type="submit" class="btn btn-success btn-lg">Create Blog</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+</body>
+</html>
