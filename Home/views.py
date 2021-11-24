@@ -64,22 +64,24 @@ def billboard(request):
         final_result = results['tracks'][:10]
         return render(request, '../templates/billboard.html', {"results": final_result})
     else:
-        # for track in results['tracks'][:10]:
-        #     print('track    : ' + track['name'])
-        #     print('audio    : ' + track['preview_url'])
-        #     print('cover art: ' + track['album']['images'][0]['url'])
-        #     print()
         return render(request, '../templates/billboard.html', )
 
 
 def wiki_home(request):
-    type_list = SongType.objects.all()
-    user = request.user
-    context = {
-        'type_list': type_list,
-        'user': user,
-    }
-    return render(request, '../templates/wiki.html', context)
+    if request.method == 'POST':
+        artist_uri = request.POST.get('uri')
+        spotify = spotipy.Spotify(
+            client_credentials_manager=SpotifyClientCredentials(client_id='36bcf4008345482db62c9dcdbc23cb20',
+                                                                client_secret='a75d83de14284a65864d87cab8f0af07', ))
+        results = spotify.artist_albums(artist_uri, album_type='album')
+        albums = results['items']
+        while results['next']:
+            results = spotify.next(results)
+            albums.extend(results['items'])
+
+        return render(request, '../templates/wiki.html', {"albums": albums})
+    else:
+        return render(request, '../templates/wiki.html', )
 
 
 def blog_home(request):
