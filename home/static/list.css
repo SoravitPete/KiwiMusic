@@ -1,12 +1,3 @@
-.mediaViewInfo {
-	--web-view-name: S_List page;
-	--web-view-id: S_List_page;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
 :root {
 	--web-view-ids: S_List_page;
 }
@@ -16,29 +7,21 @@
 	box-sizing: border-box;
 	border: none;
 }
+
 #S_List_page {
 	position: absolute;
-	width: 1920px;
+	width: 100%;
 	height: 2713px;
 	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
 	overflow: hidden;
-	--web-view-name: S_List page;
-	--web-view-id: S_List_page;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
 @keyframes fadein {
-
 	0% {
 		opacity: 0;
 	}
 	100% {
 		opacity: 1;
 	}
-
 }
 #S_List_white_rectangle {
 	fill: rgba(255,255,255,1);

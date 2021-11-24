@@ -43,6 +43,7 @@
         </nav>
     </div>
 </div>
+
 <div id="Categories">
     <a style="text-decoration: none;color: #36413F">Categories</a>
 </div>
@@ -51,28 +52,6 @@
     </div>
 <img id="Search_icon_Class" src="{% static 'media/Search_icon.png' %} "
          srcset={% static 'media/Search_icon.png' %}, {% static 'media/Search_icon.png@2x.png' %}>
-<div id="Categories_Bar">
-        <svg class="categories_bar_rectangle_bn">
-            <linearGradient id="categories_bar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
-                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
-                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
-            </linearGradient>
-            <rect id="categories_bar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1080" height="83">
-            </rect>
-        </svg>
-        <div id="categories_bar">
-            <span>Categories</span>
-        </div>
-    {% if type_list %}
-    <div id="Categories_list">
-        {% for each_song in type_list %}
-        <li><a href="/home/wiki/{{ each_song.song_type }}/" style="text-decoration: none;color: #36413F" >{{ each_song.song_type }}</a></li>
-        {% endfor %}
-    </div>
-    {% else %}
-    <p>No any songs.</p>
-    {% endif %}
-    </div>
 {% endblock %}
 </body>
 </html>
