@@ -1,5 +1,6 @@
+import spotipy
 from django.utils import timezone
-from django.http import HttpResponse
+from spotipy.oauth2 import SpotifyClientCredentials
 from django.shortcuts import render, redirect
 from .forms import CommentForm, Comment
 from django.contrib.auth.decorators import login_required
@@ -54,7 +55,21 @@ def details(request, song_type, song_name):
 
 
 def billboard(request):
-    return HttpResponse("You are looking at billboard of this week")
+    if request.method == 'POST':
+        artist_uri = request.POST.get('uri')
+        spotify = spotipy.Spotify(
+            client_credentials_manager=SpotifyClientCredentials(client_id='36bcf4008345482db62c9dcdbc23cb20',
+                                                                client_secret='a75d83de14284a65864d87cab8f0af07', ))
+        results = spotify.artist_top_tracks(artist_uri)
+        final_result = results['tracks'][:10]
+        return render(request, '../templates/billboard.html', {"results": final_result})
+    else:
+        # for track in results['tracks'][:10]:
+        #     print('track    : ' + track['name'])
+        #     print('audio    : ' + track['preview_url'])
+        #     print('cover art: ' + track['album']['images'][0]['url'])
+        #     print()
+        return render(request, '../templates/billboard.html', )
 
 
 def wiki_home(request):
