@@ -60,49 +60,19 @@
 
     <div id="Create_blog_Class">
         <a class="btn btn-success" href="/home/blog/createBlog/">Create your blog</a></div>
-
-
-    <div id="Category" style="	font-style: normal; font-weight: normal; font-size: 35px;font-family: Dosis">
-        <div id="Categories">
-            <span>Categories</span>
-        </div>
-        <img id="categories_icon"
-             src={% static 'media/categories_icon.png' %} srcset={% static 'media/categories_icon.png' %}, {% static 'media/categories_icon@2x.png' %}>
-        <div id="song_type">
-            {% if type_list %}
-                <ul>
-                    {% for each_song in type_list %}
-                        <li style="display: block"><a
-                                href="/home/wiki/{{ each_song.song_type }}/">{{ each_song.song_type }}</a></li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>No any songs.</p>
-            {% endif %}
-        </div>
-    </div>
-    <div id="Trending">
-        <div id="Trending_">
-            <span>Trending</span>
-        </div>
-        <img id="trending_icon"
-             src={% static 'media/trending_icon.png' %} srcset={% static 'media/trending_icon.png' %}, {% static 'media/trending_icon@2x.png' %}>
-    </div>
     <div id="Blog_Bar">
         <svg class="blogbar_rectangle_bn">
             <linearGradient id="blogbar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
                 <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
                 <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
             </linearGradient>
-            <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1221" height="83">
+            <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1450" height="83">
             </rect>
         </svg>
         <div id="blogbar">
             <span>Blog</span>
         </div>
     </div>
-
-
     <div id="blog_name">
         {% if blog_name %}
             <ul>
