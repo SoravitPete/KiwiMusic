@@ -293,9 +293,9 @@
 
 #Blog_Bar {
 	position: absolute;
-	width: 1221px;
-	height: 607px;
-	left: 450px;
+	width: 1450px;
+	height: 1000px;
+	left: 225px;
 	top: 560px;
 	overflow: visible;
 }
@@ -306,7 +306,7 @@
 .blogbar_rectangle_bn {
 	position: absolute;
 	overflow: visible;
-	width: 1221px;
+	width: 1450px;
 	height: 83px;
 	left: 0;
 	top: 0;
@@ -325,9 +325,10 @@
 	font-size: 51px;
 	color: rgba(255,255,255,1);
 }
+
 #blog_name {
 	position: absolute;
-	left: 450px;
+	left: 250px;
 	top: 660px;
 	font-family: Dosis;
 	font-style: normal;
