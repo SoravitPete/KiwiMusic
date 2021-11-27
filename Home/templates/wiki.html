@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="jumbotron ">
-    <h3 class="text-center">SPOTIFY : All albums of Artist </h3>
+    <h3 class="text-center">SPOTIFY : All of Artist's song </h3>
 </div>
 <div class="container">
     <form method="post">
@@ -45,9 +45,11 @@
     {% for x in albums %}
     <ol class="list-group mt-1">
         <li class="list-group-item bg-info text-center"><h3 class="text-white">{{x.name}}</h3></li>
-        <li class="list-group-item"><a href='{{x.preview_url}}'>
+        {% if x.preview_url %}
+        <li class="list-group-item"><a href='{{x.preview_url}}' target ="_blank">
             <button type="button" class="btn btn-success btn-lg mt-1">PLAY SONG</button>
         </a></li>
+        {% endif %}
         <li class="list-group-item"><img src="{{x.album.images.0.url}}" class="img-fluid img-thumbnail" alt=""></li>
     </ol>
     <hr>

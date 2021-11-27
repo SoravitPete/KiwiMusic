@@ -4,7 +4,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from django.shortcuts import render, redirect
 from .forms import CommentForm, Comment
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+
 
 from .models import SongType, BlogName, SongName
 
@@ -123,8 +123,3 @@ def create_blog(request):
         return redirect('/home/blog/')
     context = {}
     return render(request, "../templates/createblog.html", context)
-
-
-def no_preview(request):
-    return HttpResponse("This song has no permission to preview according to term of Spotify api")
-
