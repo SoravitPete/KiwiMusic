@@ -4,6 +4,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from django.shortcuts import render, redirect
 from .forms import CommentForm, Comment
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 from .models import SongType, BlogName, SongName
 
@@ -69,17 +70,15 @@ def billboard(request):
 
 def wiki_home(request):
     if request.method == 'POST':
-        artist_uri = request.POST.get('uri')
+        artist_name = request.POST.get('uri')
         spotify = spotipy.Spotify(
             client_credentials_manager=SpotifyClientCredentials(client_id='36bcf4008345482db62c9dcdbc23cb20',
                                                                 client_secret='a75d83de14284a65864d87cab8f0af07', ))
-        results = spotify.artist_albums(artist_uri, album_type='album')
-        albums = results['items']
-        while results['next']:
-            results = spotify.next(results)
-            albums.extend(results['items'])
+        results = spotify.search(q='artist:' + artist_name, type='track,artist')
+        items = results['tracks']['items']
+        picture = results['artists']['items']
 
-        return render(request, '../templates/wiki.html', {"albums": albums})
+        return render(request, '../templates/wiki.html', {"albums": items, 'picture': picture})
     else:
         return render(request, '../templates/wiki.html', )
 
@@ -124,3 +123,8 @@ def create_blog(request):
         return redirect('/home/blog/')
     context = {}
     return render(request, "../templates/createblog.html", context)
+
+
+def no_preview(request):
+    return HttpResponse("This song has no permission to preview according to term of Spotify api")
+

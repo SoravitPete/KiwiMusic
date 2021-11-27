@@ -26,12 +26,26 @@
     <hr>
 </div>
 
+{% if picture %}
+<div class="container bg-dark p-2">
+    {% for x in picture %}
+    <ol class="list-group mt-1">
+        <li class="list-group-item bg-info text-center"><h3 class="text-white">{{x.name}}</h3></li>
+        <li class="list-group-item"><img src="{{x.images.0.url}}" class="img-fluid img-thumbnail" alt=""></li>
+    </ol>
+    <hr>
+    {% endfor %}
+</div>
+{% endif %}
 
 {% if albums %}
 <div class="container bg-dark p-2">
     {% for x in albums %}
     <ol class="list-group mt-1">
         <li class="list-group-item bg-info text-center"><h3 class="text-white">{{x.name}}</h3></li>
+        <li class="list-group-item"><a href='{{x.preview_url}}'>
+            <button type="button" class="btn btn-success btn-lg mt-1">PLAY SONG</button>
+        </a></li>
         <li class="list-group-item"><img src="{{x.album.images.0.url}}" class="img-fluid img-thumbnail" alt=""></li>
     </ol>
     <hr>
