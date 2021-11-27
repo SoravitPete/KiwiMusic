@@ -15,10 +15,10 @@
     <form method="post">
         {% csrf_token %}
         <div class="form-group row">
-            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Input Artist URI</label>
+            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Input Artist Name</label>
             <div class="col-sm-10">
                 <input name="uri" type="" class="form-control form-control-lg" id="colFormLabelLg"
-                       placeholder="type uri">
+                       placeholder="type Artist Name">
                 <button type="submit" class="btn btn-success btn-lg mt-1">submit</button>
             </div>
         </div>
@@ -27,6 +27,7 @@
 </div>
 
 {% if picture %}
+<h1 class="text-center">Artist List</h1>
 <div class="container bg-dark p-2">
     {% for x in picture %}
     <ol class="list-group mt-1">
@@ -39,6 +40,7 @@
 {% endif %}
 
 {% if albums %}
+<h1 class="text-center">Song List</h1>
 <div class="container bg-dark p-2">
     {% for x in albums %}
     <ol class="list-group mt-1">

@@ -57,12 +57,12 @@ def details(request, song_type, song_name):
 
 def billboard(request):
     if request.method == 'POST':
-        artist_uri = request.POST.get('uri')
+        artist_name = request.POST.get('uri')
         spotify = spotipy.Spotify(
             client_credentials_manager=SpotifyClientCredentials(client_id='36bcf4008345482db62c9dcdbc23cb20',
                                                                 client_secret='a75d83de14284a65864d87cab8f0af07', ))
-        results = spotify.artist_top_tracks(artist_uri)
-        final_result = results['tracks'][:10]
+        results = spotify.search(q='artist:' + artist_name, type='album')
+        final_result = results['albums']['items']
         return render(request, '../templates/billboard.html', {"results": final_result})
     else:
         return render(request, '../templates/billboard.html', )
