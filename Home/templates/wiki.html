@@ -49,6 +49,10 @@
         <li class="list-group-item"><a href='{{x.preview_url}}' target ="_blank">
             <button type="button" class="btn btn-success btn-lg mt-1">PLAY SONG</button>
         </a></li>
+        {% else %}
+        <li class="list-group-item">
+            <button type="button" class="btn btn-danger btn-lg mt-1">NO PREVIEW SONG
+            </button></li>
         {% endif %}
         <li class="list-group-item"><img src="{{x.album.images.0.url}}" class="img-fluid img-thumbnail" alt=""></li>
     </ol>
