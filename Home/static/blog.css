@@ -1,33 +1,3 @@
-.mediaViewInfo {
-	--web-view-name: Blog page;
-	--web-view-id: Blog_page;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-:root {
-	--web-view-ids: Blog_page;
-}
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	border: none;
-}
-
-@keyframes fadein {
-
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-
-}
-
 #home {
 	left: 1047px;
 	top: 95px;
@@ -154,17 +124,10 @@
 
 #Blog_page{
 	position: absolute;
-	width: 1920px;
+	width: 100%;
 	height: 2713px;
 	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
 	overflow: hidden;
-	--web-view-name: Home page;
-	--web-view-id: Home_page;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
 #Blog_white_rectangle {
 	fill: rgba(255,255,255,1);
@@ -232,11 +195,6 @@
 	left: 198px;
 	top: 660px;
 	overflow: visible;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
 #Categories {
 	left: 40px;
@@ -283,11 +241,6 @@
 	left: 198px;
 	top: 600px;
 	overflow: visible;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
 #Trending_ {
 	left: 40px;
