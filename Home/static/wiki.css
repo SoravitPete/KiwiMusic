@@ -1,38 +1,9 @@
 #Wiki_page {
 	position: absolute;
 	width: 100%;
-	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
+	height: 100%;
+	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 80%);
 	overflow: hidden;
-}
-
-#Wiki_white_rectangle {
-	fill: rgba(255,255,255,1);
-}
-.Wiki_white_rectangle {
-	position: absolute;
-    overflow: visible;
-    width: 1612px;
-    height: 2328px;
-    left: 154px;
-    top: 226px;
-}
-#wiki {
-	left: 1047px;
-	top: 95px;
-	position: absolute;
-	overflow: visible;
-	width: 123px;
-	white-space: nowrap;
-	--web-animation: fadein 0.3s ease-out;
-	--web-action-type: page;
-	--web-action-target: ;
-	cursor: pointer;
-	text-align: left;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 55px;
-	color: rgba(255,255,255,1);
 }
 
 #home {
@@ -44,7 +15,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: ;
+	--web-action-target: ../;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -53,6 +24,7 @@
 	font-size: 55px;
 	color: rgba(255,255,255,1);
 }
+
 #blog {
 	left: 1222px;
 	top: 95px;
@@ -62,7 +34,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: blog;
+	--web-action-target: ../blog;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -71,6 +43,7 @@
 	font-size: 55px;
 	color: rgba(255,255,255,1);
 }
+
 #wiki {
 	left: 1364px;
 	top: 95px;
@@ -80,7 +53,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: wiki;
+	--web-action-target: ;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -98,110 +71,90 @@
 	top: -22px;
 	overflow: visible;
 }
+
 #Group_1 {
 	position: absolute;
-	width: 206px;
+	width: 300px;
 	height: 48px;
 	left: 1517px;
 	top: 105px;
 	overflow: visible;
 }
 
-#Categories {
-	position: absolute;
-	width: 900px;
-	height: 300px;
-	left: 640px;
-	top: 240px;
-	overflow: visible;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-    font-size: 70px;
+#Login_rectangle {
+	fill: rgba(255,255,255,1);
 }
 
-#Search_icon_Class {
-	position: absolute;
-	width: 37px;
-	height: 42px;
-	left: 570px;
-	top: 360px;
-	overflow: visible;
-}
-#Search_Class input[type=text]{
-    padding: 8px;
-	left: 620px;
-	top: 350px;
+.Login_rectangle {
+	filter: drop-shadow(-5px -5px 15px rgba(16, 187, 119, 0.471));
 	position: absolute;
 	overflow: visible;
-	width: 380px;
-	white-space: nowrap;
-	text-align: left;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 31px;
-	background-color:#D8D8D8;
-    color:black;
-	border: none;
-}
-
-#Line {
-	fill: rgba(60,60,60,1);
-}
-.Line {
-	position: absolute;
-	overflow: visible;
-	width: 400px;
-	height: 1px;
-	left: 630px;
-	top: 330px;
-}
-
-#Categories_list {
-	position: absolute;
-	width: 1000px;
-	height: 1000px;
-	left: 0px;
-	top: 120px;
-	overflow: visible;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 40px;
-}
-
-#Categories_Bar {
-	position: absolute;
-	width: 1221px;
-	height: 607px;
-	left: 220px;
-	top: 450px;
-	overflow: visible;
-}
-
-#categories_bar_rectangle_bn {
-	fill: url(#categories_bar_rectangle_bn);
-}
-.categories_bar_rectangle_bn {
-	position: absolute;
-	overflow: visible;
-	width: 1221px;
-	height: 83px;
+	width: 148px;
+	height: 93px;
 	left: 0;
 	top: 0;
 }
-#categories_bar {
-	left: 37px;
-	top: 5px;
+
+#Register_rectangle {
+	fill: rgba(66,180,127,1);
+}
+
+.Register_rectangle {
+	filter: drop-shadow(7px -5px 15px rgba(16, 187, 119, 0.471));
 	position: absolute;
 	overflow: visible;
-	width: 223px;
+	width: 148px;
+	height: 93px;
+	left: 103px;
+	top: 0;
+}
+
+#Login {
+	left: 27px;
+	top: 8px;
+	position: absolute;
+	overflow: visible;
+	width: 49px;
 	white-space: nowrap;
 	text-align: left;
-	font-family: Junegull;
+	font-family: Dosis;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 51px;
-	color: rgba(255, 255, 255, 1);
+	font-size: 24px;
+	color: rgba(62,161,95,1);
+}
+
+#Register {
+	left: 117px;
+	top: 8px;
+	position: absolute;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: rgba(255,255,255,1);
+}
+
+#Spotify {
+	left: 200px;
+	top: 300px;
+	font-family: Dosis;
+	position: absolute;
+	overflow: visible;
+	width: 1500px;
+}
+
+#song_list{
+	position: absolute;
+	left: 400px;
+	top: 230px;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 30px;
+	overflow: visible;
 }
