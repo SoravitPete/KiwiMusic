@@ -1,8 +1,10 @@
+import spotipy
 from django.utils import timezone
-from django.http import HttpResponse
+from spotipy.oauth2 import SpotifyClientCredentials
 from django.shortcuts import render, redirect
 from .forms import CommentForm, Comment
 from django.contrib.auth.decorators import login_required
+
 
 from .models import SongType, BlogName, SongName
 
@@ -54,17 +56,31 @@ def details(request, song_type, song_name):
 
 
 def billboard(request):
-    return HttpResponse("You are looking at billboard of this week")
+    if request.method == 'POST':
+        artist_name = request.POST.get('uri')
+        spotify = spotipy.Spotify(
+            client_credentials_manager=SpotifyClientCredentials(client_id='36bcf4008345482db62c9dcdbc23cb20',
+                                                                client_secret='a75d83de14284a65864d87cab8f0af07', ))
+        results = spotify.search(q='artist:' + artist_name, type='album')
+        final_result = results['albums']['items']
+        return render(request, '../templates/billboard.html', {"results": final_result})
+    else:
+        return render(request, '../templates/billboard.html', )
 
 
 def wiki_home(request):
-    type_list = SongType.objects.all()
-    user = request.user
-    context = {
-        'type_list': type_list,
-        'user': user,
-    }
-    return render(request, '../templates/wiki.html', context)
+    if request.method == 'POST':
+        artist_name = request.POST.get('uri')
+        spotify = spotipy.Spotify(
+            client_credentials_manager=SpotifyClientCredentials(client_id='36bcf4008345482db62c9dcdbc23cb20',
+                                                                client_secret='a75d83de14284a65864d87cab8f0af07', ))
+        results = spotify.search(q='artist:' + artist_name, type='track,artist')
+        items = results['tracks']['items']
+        picture = results['artists']['items']
+
+        return render(request, '../templates/wiki.html', {"albums": items, 'picture': picture})
+    else:
+        return render(request, '../templates/wiki.html', )
 
 
 def blog_home(request):
