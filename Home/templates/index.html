@@ -15,39 +15,50 @@
 </head>
 <body>
 {% block content %}
-    <div id="Home_page">
-        <div>
-            <nav>
-                <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
-                     srcset="{% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}">
-                <ul>
-                    <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
-                        <span>Home</span>
-                    </li>
-                    <li id="blog" onclick="application.goToTargetView(event)" style="display: inline-block">
-                        <span>Blog</span>
-                    </li>
-                    <li id="wiki" onclick="application.goToTargetView(event)" style="display: inline-block">
-                        <span>Wiki</span>
-                    </li>
-                </ul>
-                <div id="Group_1" style="top: 110px">
-                    {% if user.is_authenticated %}
-                        <h5 style="text-decoration: none; color: white">Your profile: {{ user.username }}</h5>
-                        <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
+<div id="Home_page">
+    <div>
+        <nav>
+            <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
+                 srcset="{% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}">
+            <ul>
+                <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Home</span>
+                </li>
+                <li id="blog" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Blog</span>
+                </li>
+                <li id="wiki" onclick="application.goToTargetView(event)" style="display: inline-block">
+                    <span>Wiki</span>
+                </li>
+            </ul>
+            <div id="Group_1" style="top: 110px">
+                {% if user.is_authenticated %}
+                <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
+                <div id="username"><h5 style="text-decoration: none; color: white">{{user.username}}</h5></div>
+                <div id="Logout_button">
+                        <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
                     {% else %}
-                        <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis; background-color: white; color: #1b1b1b">Login</a>
-                        <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis; background-color: green">Register</a>
+                    <div id="Login_button">
+                        <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
+                    <div id="Signup_button">
+                        <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
+
                     {% endif %}
                 </div>
-            </nav>
-        </div>
-        <div id="WELCOME_TO">
-            <span>WELCOME TO</span>
-        </div>
-        <img id="logo"
-             src="{% static 'media/logo.png' %}" srcset="{% static 'media/logo.png' %}, {% static 'media/logo@2x.png' %}">
+            </div>
+        </nav>
     </div>
+    <div id="WELCOME_TO">
+        <span>WELCOME TO</span>
+    </div>
+    <img id="logo"
+         src={% static 'media/logo.png' %} srcset={% static 'media/logo.png' %}, {% static 'media/logo@2x.png' %}>
+</div>
+<div id="billboard_button">
+    <a><img src="{% static 'media/billboard_button.png' %}"/></div>
+
+<div id="Login2_button">
+    <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a></div>
 {% endblock %}
 </body>
 </html>
