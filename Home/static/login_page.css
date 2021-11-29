@@ -1,0 +1,286 @@
+#Login_page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#login_bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+#white_rectangle {
+	fill: rgba(255,255,255,1);
+}
+.white_rectangle {
+	filter: drop-shadow(10px 10px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 1538px;
+	height: 769px;
+	left: 180px;
+	top: 100px;
+}
+#green_rectangle_n {
+	fill: url(#green_rectangle_n);
+}
+.green_rectangle_n {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 778px;
+	height: 768px;
+	left: 180px;
+	top: 100px;
+}
+#logo {
+	position: absolute;
+	width: 311px;
+	height: 282px;
+	left: 400px;
+	top: 390px;
+	overflow: visible;
+}
+#WELCOME_TO {
+	left: 385px;
+	top: 300px;
+	position: absolute;
+	overflow: visible;
+	width: 304px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 60px;
+	color: rgba(255,255,255,1);
+}
+#Login_and_Register_button {
+	position: absolute;
+	width: 283px;
+	height: 59px;
+	left: 1344px;
+	top: 100px;
+	overflow: visible;
+}
+#Register_button_s {
+	fill: url(#Register_button_s);
+}
+.Register_button_s {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 159px;
+	height: 77px;
+	left: 0px;
+	top: 0px;
+}
+#Register {
+	position: absolute;
+	overflow: visible;
+	width: 75px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+}
+#Login_button_v {
+	fill: url(#Login_button_v);
+}
+.Login_button_v {
+	filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 159px;
+	height: 77px;
+	left: 142px;
+	top: 0px;
+}
+#Login {
+	left: 141px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 51px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	color: rgba(255,255,255,1);
+}
+#Login_x {
+	left: 1282px;
+	top: 322px;
+	position: absolute;
+	overflow: visible;
+	width: 100px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	color: rgba(68,68,68,1);
+}
+#Username_part {
+	position: absolute;
+	width: 543px;
+	height: 93px;
+	left: 1057px;
+	top: 422px;
+	overflow: visible;
+}
+#Type_your_username {
+	left: 49px;
+	top: 49px;
+	position: absolute;
+	overflow: visible;
+	width: 150px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(54,65,63,1);
+}
+#user_icon {
+	position: absolute;
+	width: 44px;
+	height: 40px;
+	left: 0px;
+	top: 41px;
+	overflow: visible;
+}
+#Username {
+	left: 6px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 96px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	color: rgba(54,65,63,1);
+}
+#user_black_underline {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(54,65,63,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.user_black_underline {
+	position: absolute;
+	overflow: visible;
+	width: 537px;
+	height: 2px;
+	left: 6px;
+	top: 91px;
+}
+#Password_part {
+	position: absolute;
+	width: 541px;
+	height: 93px;
+	left: 1059px;
+	top: 567px;
+	overflow: visible;
+}
+#Type_your_password {
+	left: 47px;
+	top: 49px;
+	position: absolute;
+	overflow: visible;
+	width: 145px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(54,65,63,1);
+}
+#password_icon {
+	position: absolute;
+	width: 40px;
+	height: 38px;
+	left: 0px;
+	top: 43px;
+	overflow: visible;
+}
+#Password {
+	left: 4px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 89px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	color: rgba(54,65,63,1);
+}
+#password_black_underline {
+	fill: rgba(255,255,255,1);
+	stroke: rgba(54,65,63,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.password_black_underline {
+	position: absolute;
+	overflow: visible;
+	width: 537px;
+	height: 2px;
+	left: 4px;
+	top: 91px;
+}
+#Main_login_button {
+	position: absolute;
+	width: 345px;
+	height: 67px;
+	left: 1158px;
+	top: 738px;
+	overflow: visible;
+}
+#main_login_button_ba {
+	fill: url(#main_login_button_ba);
+}
+.main_login_button_ba {
+	filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 363px;
+	height: 85px;
+	left: 0px;
+	top: 0px;
+}
+#Login_bb {
+	left: 139px;
+	top: 12px;
+	position: absolute;
+	overflow: visible;
+	width: 70px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 35px;
+	color: rgba(255,255,255,1);
+}

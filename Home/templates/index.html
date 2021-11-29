@@ -19,7 +19,7 @@
         <div>
             <nav>
                 <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
-                     srcset={% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}>
+                     srcset="{% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}">
                 <ul>
                     <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
                         <span>Home</span>
@@ -46,7 +46,7 @@
             <span>WELCOME TO</span>
         </div>
         <img id="logo"
-             src={% static 'media/logo.png' %} srcset={% static 'media/logo.png' %}, {% static 'media/logo@2x.png' %}>
+             src="{% static 'media/logo.png' %}" srcset="{% static 'media/logo.png' %}, {% static 'media/logo@2x.png' %}">
     </div>
 {% endblock %}
 </body>
