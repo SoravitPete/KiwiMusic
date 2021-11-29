@@ -29,7 +29,7 @@
             <rect id="green_rectangle_n" rx="48" ry="48" x="0" y="0" width="760" height="750">
             </rect>
         </svg>
-        <img id="logo" src="{% static 'media/logo.png' %}">
+        <a href="{% url 'index' %}"><img id="logo" src="{% static 'media/logo.png' %}"></a>
         <div id="WELCOME_TO">
             <span>WELCOME TO</span>
         </div>
@@ -64,47 +64,45 @@
     <div id="Login_x">
         <span>Login</span>
     </div>
-    <div id="Username_part">
-        <div id="Type_your_username">
-            <span>Type your username</span>
-        </div>
-        <img id="user_icon" src="user_icon.png" srcset="user_icon.png 1x">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div id="Username_part">
+            <div class="mb-3 mt-3" id="Type_your_username">
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+            </div>
+            <img id="user_icon" src="{% static 'media/user_icon.png' %}" srcset="{% static 'media/user_icon.png' %}">
 
-        <div id="Username">
-            <span>Username</span>
+            <div id="Username">
+                <span>Username</span>
+            </div>
+            <svg class="user_black_underline">
+                <rect id="user_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
+                </rect>
+            </svg>
         </div>
-        <svg class="user_black_underline">
-            <rect id="user_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
-            </rect>
-        </svg>
-    </div>
-    <div id="Password_part">
-        <div id="Type_your_password">
-            <span>Type your password</span>
-        </div>
-        <img id="password_icon" src="password_icon.png" srcset="password_icon.png 1x">
+        <div id="Password_part">
+            <div class="mb-3 mt-3" id="Type_your_username">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+            </div>
+            <img id="password_icon" src="{% static 'media/password_icon.png' %}"
+                 srcset="{% static 'media/password_icon.png' %}">
 
-        <div id="Password">
-            <span>Password</span>
+            <div id="Password">
+                <span>Password</span>
+            </div>
+            <svg class="password_black_underline">
+                <rect id="password_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
+                </rect>
+            </svg>
         </div>
-        <svg class="password_black_underline">
-            <rect id="password_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
-            </rect>
-        </svg>
-    </div>
-    <div id="Main_login_button">
-        <svg class="main_login_button_ba">
-            <linearGradient id="main_login_button_ba" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
-                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
-                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
-            </linearGradient>
-            <rect id="main_login_button_ba" rx="33.5" ry="33.5" x="0" y="0" width="345" height="67">
-            </rect>
-        </svg>
-        <div id="Login_bb">
-            <span>Login</span>
+        <div id="Main_login_button">
+            <img src="{% static 'media/login_page_button.png' %}" class="main_login_button_ba" alt="">
+            <div id="Login_bb">
+                <button type="submit" class="btn btn-outline-light btn-lg b" style="width: 345px; height: 69px; font-family: Dosis; font-size: 26px">Login</button>
+            </div>
         </div>
-    </div>
+    </form>
 {% endblock %}
 </body>
 </html>
