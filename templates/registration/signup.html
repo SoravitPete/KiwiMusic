@@ -1,19 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'register_page.css' %}" type="text/css" id="applicationStylesheet">
+    <script id="applicationScript" type="text/javascript" src="{% static 'page.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
+    <title>Login page</title>
+</head>
+<body>
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+    <div id="Login_page">
+        <img id="login_bg" src="{% static 'media/login_bg.png' %}">
+        <svg class="white_rectangle">
+            <rect id="white_rectangle" rx="48" ry="48" x="0" y="0" width="1519" height="750">
+            </rect>
+        </svg>
+        <svg class="green_rectangle_n">
+            <linearGradient id="green_rectangle_n" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
+                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
+                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
+            </linearGradient>
+            <rect id="green_rectangle_n" rx="48" ry="48" x="0" y="0" width="760" height="750">
+            </rect>
+        </svg>
+        <a href="{% url 'index' %}"><img id="logo" src="{% static 'media/logo.png' %}"></a>
+        <div id="WELCOME_TO">
+            <span>WELCOME TO</span>
+        </div>
+    </div>
+    <div id="Login_and_Register_button">
+        <svg class="Register_button_s">
+            <linearGradient id="Register_button_s" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
+                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
+                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
+            </linearGradient>
+            <rect id="Register_button_s" rx="0" ry="0" x="0" y="0" width="141" height="59">
+            </rect>
+        </svg>
+        <div id="Register">
+            <a type="button" class="btn btn-outline-light btn-lg"
+               style="width: 141px; height: 59px; font-family: Dosis; font-size: 26px" href="{% url 'signup' %}">Register</a>
+        </div>
+        <svg class="Login_button_v">
+            <linearGradient id="Login_button_v" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
+                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
+                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
+            </linearGradient>
+            <rect id="Login_button_v" rx="0" ry="0" x="0" y="0" width="141" height="59">
+            </rect>
+        </svg>
+        <div id="Login">
+            <a type="button" class="btn btn-outline-light btn-lg"
+               style="width: 141px; height: 59px; font-family: Dosis; font-size: 26px"
+               href="{% url 'login' %}">Login</a>
+        </div>
+    </div>
+    <div id="Register_x">
+        <span>Register</span>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div id="Username_part">
+            <div class="mb-3 mt-3" id="Type_your_username">
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+            </div>
+            <img id="user_icon" src="{% static 'media/user_icon.png' %}" srcset="{% static 'media/user_icon.png' %}">
+
+            <div id="Username">
+                <span>Username</span>
+            </div>
+            <svg class="user_black_underline">
+                <rect id="user_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
+                </rect>
+            </svg>
+        </div>
+        <div id="Password_part">
+            <div class="mb-3 mt-3" id="Type_your_username">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+            </div>
+            <img id="password_icon" src="{% static 'media/password_icon.png' %}"
+                 srcset="{% static 'media/password_icon.png' %}">
+
+            <div id="Password">
+                <span>Password</span>
+            </div>
+            <svg class="password_black_underline">
+                <rect id="password_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
+                </rect>
+            </svg>
+        </div>
+        <div id="Confirm_password_part">
+            <div id="Type_your_password_">
+                <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password" name="pswd" required>
+            </div>
+            <img id="confirm_password_icon" src="{% static 'media/password_icon.png' %}" srcset="confirm_password_icon.png 1x">
+
+            <div id="Confirm_password">
+                <span>Confirm password</span>
+            </div>
+            <svg class="confirm_password_black_underli">
+                <rect id="confirm_password_black_underli" rx="0" ry="0" x="0" y="0" width="537" height="2">
+                </rect>
+            </svg>
+        </div>
+        <div id="Main_login_button">
+            <img src="{% static 'media/login_page_button.png' %}" class="main_login_button_ba" alt="">
+            <div id="Login_bb">
+                <button type="submit" class="btn btn-outline-light btn-lg b"
+                        style="width: 345px; height: 69px; font-family: Dosis; font-size: 26px">Login
+                </button>
+            </div>
+        </div>
+    </form>
 {% endblock %}
+</body>
+</html>
