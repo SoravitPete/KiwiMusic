@@ -66,9 +66,20 @@
     </div>
     <form method="post">
         {% csrf_token %}
+        <div id="non_field_errors" style="left: 1050px">
+            {{ form.non_field_errors }}
+            <ul>
+                <li><small style="color: grey">Your password can’t be too similar to your other personal
+                    information.</small></li>
+                <li><small style="color: grey">Your password must contain at least 8 characters.</small></li>
+                <li><small style="color: grey">Your password can’t be a commonly used password.</small></li>
+                <li><small style="color: grey">Your password can’t be entirely numeric.</small></li>
+            </ul>
+        </div>
         <div id="Username_part">
-            <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
-                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+            <div class="mb-3 mt-3" id="Type_your_username">
+                {{ form.username }}
+                {{ form.username.errors }}
             </div>
             <img id="user_icon" src="{% static 'media/user_icon.png' %}" srcset="{% static 'media/user_icon.png' %}">
 
@@ -81,8 +92,9 @@
             </svg>
         </div>
         <div id="Password_part">
-            <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+            <div class="mb-3 mt-3" id="Type_your_username">
+                {{ form.password1 }}
+                {{ form.password1.errors }}
             </div>
             <img id="password_icon" src="{% static 'media/password_icon.png' %}"
                  srcset="{% static 'media/password_icon.png' %}">
@@ -96,10 +108,12 @@
             </svg>
         </div>
         <div id="Confirm_password_part">
-            <div class="mb-3 mt-3" id="Type_your_password_" style="top: 24px; width: 490px">
-                <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password" name="pswd" required>
+            <div class="mb-3 mt-3" id="Type_your_password_">
+                {{ form.password2 }}
+                {{ form.password2.errors }}
             </div>
-            <img id="confirm_password_icon" src="{% static 'media/password_icon.png' %}" srcset="{% static 'media/password_icon.png' %}">
+            <img id="confirm_password_icon" src="{% static 'media/password_icon.png' %}"
+                 srcset="{% static 'media/password_icon.png' %}">
             <div id="Confirm_password">
                 <span>Confirm password</span>
             </div>
@@ -116,6 +130,22 @@
                 </button>
             </div>
         </div>
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: grey">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </p>
+        {% endfor %}
+        <button type="submit">Sign up</button>
     </form>
 {% endblock %}
 </body>

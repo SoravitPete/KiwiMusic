@@ -116,7 +116,7 @@
 }
 #Register_x {
 	left: 1256px;
-	top: 200px;
+	top: 175px;
 	position: absolute;
 	overflow: visible;
 	width: 148px;
@@ -133,12 +133,12 @@
 	width: 543px;
 	height: 93px;
 	left: 1059px;
-	top: 300px;
+	top: 245px;
 	overflow: visible;
 }
 #Type_your_username {
 	left: 49px;
-	top: 49px;
+	top: 27px;
 	position: absolute;
 	overflow: visible;
 	width: 150px;
@@ -194,12 +194,12 @@
 	width: 541px;
 	height: 93px;
 	left: 1059px;
-	top: 420px;
+	top: 345px;
 	overflow: visible;
 }
 #Type_your_password {
 	left: 47px;
-	top: 49px;
+	top: 27px;
 	position: absolute;
 	overflow: visible;
 	width: 145px;
@@ -255,12 +255,12 @@
 	width: 541px;
 	height: 93px;
 	left: 1059px;
-	top: 540px;
+	top: 445px;
 	overflow: visible;
 }
 #Type_your_password_ {
 	left: 47px;
-	top: 49px;
+	top: 27px;
 	position: absolute;
 	overflow: visible;
 	width: 145px;
@@ -329,11 +329,11 @@
 	width: 695px;
 	height: 110px;
 	left: -185px;
-	top: -100px;
+	top: -80px;
 }
 #Register_bg {
 	left: -10px;
-	top: -80px;
+	top: -60px;
 	position: absolute;
 	overflow: visible;
 	width: 70px;
@@ -344,4 +344,19 @@
 	font-weight: normal;
 	font-size: 35px;
 	color: rgba(255,255,255,1);
+}
+#non_field_errors
+{
+	left: -10px;
+	top: 550px;
+	position: absolute;
+	overflow: visible;
+	width: 70px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: red;
 }

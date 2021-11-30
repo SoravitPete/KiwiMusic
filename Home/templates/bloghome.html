@@ -2,7 +2,6 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="../static/blog.css"/>
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
     <title>Blog page</title>
-
 </head>
-
 <body>
 <div id="Blog_page">
-    <svg id="Blog_white_rectangle">
-        <rect id="Blog_white_rectangle" rx="36" ry="36" x="0" y="0" width="1612" height="1562"></rect>
-    </svg>
     <div>
         <nav>
             <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
@@ -43,67 +37,48 @@
                 {% if user.is_authenticated %}
                 Your profile: {{ user.username }}
                 <div id="Logout_button">
-                        <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
+                    <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
                     {% else %}
                     <div id="Login_button">
                         <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
                     <div id="Signup_button">
                         <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
-                {% endif %}
-            </div>
+                    {% endif %}
+                </div>
         </nav>
     </div>
     <div id="Blog_ci_Class">
         <span>Blog</span>
     </div>
-    <div id="Search_Class">
-        <input type="text" placeholder="Search...">
-
-    </div>
-    <img id="Search_icon_Class" src="{% static 'media/Search_icon.png' %} "
-         srcset={% static 'media/Search_icon.png' %}, {% static 'media/Search_icon.png@2x.png' %}>
-
-
     <div id="Create_blog_Class">
         <a class="btn btn-success" href="/home/blog/createBlog/">Create your blog</a></div>
-
-
     <div id="Blog_Bar">
         <svg class="blogbar_rectangle_bn">
             <linearGradient id="blogbar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
                 <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
                 <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
             </linearGradient>
-            <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="-200" y="0" width="1420" height="83">
-            </rect>
         </svg>
-        <div id="blogbar">
-            <span>Blog</span>
-        </div>
     </div>
-
-
     <div id="blog_name">
         {% if blog_name %}
-
         {% for each_name_blog in blog_name %}
-        <div class="row row-cols-3 row-cols-md-3 g-4">
-            <div class="col-3">
-                <div class="card h-100 shadow">
-                    <img src="{% static 'media/blog_pic.png' %} " class="card-img-top">
+        <div class="card border-secondary border-2 mb-4 w-60" style="max-width: 670px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'media/blog_pic.png' %}" class="img-fluid rounded-start" alt="blog_pic">
+                </div>
+                <div class="col-md-8">
                     <div class="card-body">
                         <h3 class="card-title"><a href="/home/blog/{{ each_name_blog.blog_name }}/user_name/">{{each_name_blog.blog_name }}</a></h3>
-                        <p class="card-text">
                         <ul>
-                        <li style="display: block">Created by {{ each_name_blog.creator }}</li>
-                        <li style="display: block">{{ each_name_blog.pub_date }}</li>
-                        </ul>
+                        <li class="card-text">Created by {{ each_name_blog.creator }}</li>
+                        <li class="card-text"><small class="text-muted">{{ each_name_blog.pub_date }}</small></li>
+                            </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-
         {% endfor %}
     </div>
     {% else %}

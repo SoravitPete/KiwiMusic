@@ -64,42 +64,53 @@
     <div id="Login_x">
         <span>Login</span>
     </div>
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <div id="Username_part">
-            <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
-                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+            <div id="Username_part">
+                <div id="non_field_errors">
+                    {{ form.non_field_errors }}
+                </div>
+                <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
+{#                    <input type="text" class="form-control" placeholder="Enter username" name="username" autofocus#}
+{#                           autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">#}
+                    {{ form.username }}
+                    {{ form.username.errors }}
+                </div>
+                <img id="user_icon" src="{% static 'media/user_icon.png' %}"
+                     srcset="{% static 'media/user_icon.png' %}">
+                <div id="Username">
+                    <span>Username</span>
+                </div>
+                <svg class="user_black_underline">
+                    <rect id="user_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
+                    </rect>
+                </svg>
             </div>
-            <img id="user_icon" src="{% static 'media/user_icon.png' %}" srcset="{% static 'media/user_icon.png' %}">
+            <div id="Password_part">
+                <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
+{#                    <input type="password" class="form-control" id="id_password" placeholder="Enter password"#}
+{#                           name="passaword" autocomplete="current-password" required>#}
+                    {{ form.password }}
+                    {{ form.password.errors }}
+                </div>
+                <img id="password_icon" src="{% static 'media/password_icon.png' %}"
+                     srcset="{% static 'media/password_icon.png' %}">
+                <div id="Password">
+                    <span>Password</span>
+                </div>
+                <svg class="password_black_underline">
+                    <rect id="password_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
+                    </rect>
+                </svg>
+            </div>
 
-            <div id="Username">
-                <span>Username</span>
-            </div>
-            <svg class="user_black_underline">
-                <rect id="user_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
-                </rect>
-            </svg>
-        </div>
-        <div id="Password_part">
-            <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-            </div>
-            <img id="password_icon" src="{% static 'media/password_icon.png' %}"
-                 srcset="{% static 'media/password_icon.png' %}">
 
-            <div id="Password">
-                <span>Password</span>
-            </div>
-            <svg class="password_black_underline">
-                <rect id="password_black_underline" rx="0" ry="0" x="0" y="0" width="537" height="2">
-                </rect>
-            </svg>
-        </div>
         <div id="Main_login_button">
             <img src="{% static 'media/login_page_button.png' %}" class="main_login_button_ba" alt="">
             <div id="Login_bb">
-                <button type="submit" class="btn btn-outline-light btn-lg b" style="width: 345px; height: 69px; font-family: Dosis; font-size: 26px">Login</button>
+                <button type="submit" class="btn btn-outline-light btn-lg b"
+                        style="width: 345px; height: 69px; font-family: Dosis; font-size: 26px">Login
+                </button>
             </div>
         </div>
     </form>
