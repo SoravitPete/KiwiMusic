@@ -69,6 +69,22 @@
 	top: 100px;
 	overflow: visible;
 }
+#username {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 18px;
+	top: 30px;
+	overflow: visible;
+}
+#Your_profile {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 2px;
+	top: 5px;
+	overflow: visible;
+}
 
 #Logout_button {
 	position: absolute;

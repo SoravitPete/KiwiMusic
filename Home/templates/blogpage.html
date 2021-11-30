@@ -39,7 +39,8 @@
             </ul>
             <div id="Group_1" style="top: 110px">
                 {% if user.is_authenticated %}
-                    Your profile: {{ user.username }}
+                <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
+                <div id="username"><h5 style="text-decoration: none; color: white">{{user.username}}</h5></div>
                 <div id="Logout_button">
                         <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
                     {% else %}

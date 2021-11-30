@@ -34,6 +34,7 @@
 	font-size: 55px;
 	color: rgba(255,255,255,1);
 }
+
 #wiki {
 	left: 1240px;
 	top: 95px;
@@ -67,6 +68,22 @@
 	height: 48px;
 	left: 1400px;
 	top: 100px;
+	overflow: visible;
+}
+#username {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 18px;
+	top: 30px;
+	overflow: visible;
+}
+#Your_profile {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 2px;
+	top: 5px;
 	overflow: visible;
 }
 
@@ -194,11 +211,11 @@
 }
 #Create_blog_bar {
 	padding: 10px;
-	left: 20px;
+	left: -55px;
 	top: 70px;
 	position: absolute;
 	overflow: visible;
-	width: 465px;
+	width: 532px;
 	text-align: left;
 	font-family: Dosis;
 	font-style: normal;
@@ -215,7 +232,7 @@
 	position: absolute;
 	width: 200px;
 	height: 68px;
-	left: 170px;
+	left: 160px;
 	top: 230px;
 	overflow: visible;
 }

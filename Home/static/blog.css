@@ -224,38 +224,22 @@
 	top: -30px;
 	overflow: visible;
 }
-
-#Trending {
+#username {
 	position: absolute;
-	width: 153px;
-	height: 44px;
-	left: 198px;
-	top: 600px;
+	width: 300px;
+	height: 48px;
+	left: 18px;
+	top: 30px;
 	overflow: visible;
 }
-#Trending_ {
-	left: 40px;
-	top: -30px;
+#Your_profile {
 	position: absolute;
-	overflow: visible;
-	width: 111px;
-	white-space: nowrap;
-	text-align: left;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 35px;
-	color: rgba(54,65,63,1);
-}
-#trending_icon {
-	position: absolute;
-	width: 39px;
-	height: 43px;
-	left: 0px;
-	top: -30px;
+	width: 300px;
+	height: 48px;
+	left: 2px;
+	top: 5px;
 	overflow: visible;
 }
-
 
 #blogbar_rectangle_bn {
 	fill: url(#blogbar_rectangle_bn);
