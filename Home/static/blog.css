@@ -1,5 +1,5 @@
 #home {
-	left: 1047px;
+	left: 900px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -17,7 +17,7 @@
 	color: rgba(255,255,255,1);
 }
 #blog {
-	left: 1222px;
+	left: 1080px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -35,7 +35,7 @@
 	color: rgba(255,255,255,1);
 }
 #wiki {
-	left: 1364px;
+	left: 1240px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -63,10 +63,10 @@
 }
 #Group_1 {
 	position: absolute;
-	width: 206px;
+	width: 300px;
 	height: 48px;
-	left: 1517px;
-	top: 105px;
+	left: 1400px;
+	top: 100px;
 	overflow: visible;
 }
 #Login_rectangle {
@@ -137,7 +137,7 @@
 	overflow: visible;
 	width: 1612px;
 	height: 2328px;
-	left: 154px;
+	left: 125px;
 	top: 226px;
 }
 #Blog_ci_Class {
@@ -267,9 +267,9 @@
 
 #Blog_Bar {
 	position: absolute;
-	width: 1221px;
+	width: 1300px;
 	height: 607px;
-	left: 450px;
+	left: 275px;
 	top: 560px;
 	overflow: visible;
 }
@@ -282,11 +282,11 @@
 	overflow: visible;
 	width: 1221px;
 	height: 83px;
-	left: 0;
+	left: 150;
 	top: 0;
 }
 #blogbar {
-	left: 37px;
+	left: 10px;
 	top: 5px;
 	position: absolute;
 	overflow: visible;
@@ -301,12 +301,38 @@
 }
 #blog_name {
 	position: absolute;
-	left: 450px;
-	top: 660px;
+	left: 250px;
+	top: 665px;
 	font-family: Dosis;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 30px;
 	overflow: visible;
+	width: 1000px;
+
 }
 
+#Logout_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 82px;
+	top: 7px;
+	overflow: visible;
+}
+#Login_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: -50px;
+	top: 7px;
+	overflow: visible;
+}
+#Signup_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 60px;
+	top: 7px;
+	overflow: visible;
+}

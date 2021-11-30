@@ -12,6 +12,9 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'blogpage.css' %}" type="text/css" id="applicationStylesheet">
     <script id="applicationScript" type="text/javascript" src="{% static 'page.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
 </head>
 <title>Blog detail</title>
 <body>
@@ -37,10 +40,13 @@
             <div id="Group_1" style="top: 110px">
                 {% if user.is_authenticated %}
                     Your profile: {{ user.username }}
-                    <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
-                {% else %}
-                    <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
-                    <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
+                <div id="Logout_button">
+                        <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
+                    {% else %}
+                    <div id="Login_button">
+                        <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
+                    <div id="Signup_button">
+                        <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
                 {% endif %}
             </div>
         </nav>

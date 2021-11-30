@@ -7,7 +7,7 @@
 }
 
 #home {
-	left: 1047px;
+	left: 900px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -26,7 +26,7 @@
 }
 
 #blog {
-	left: 1222px;
+	left: 1080px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -34,7 +34,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: ../blog;
+	--web-action-target: ;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -43,9 +43,8 @@
 	font-size: 55px;
 	color: rgba(255,255,255,1);
 }
-
 #wiki {
-	left: 1364px;
+	left: 1240px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -53,7 +52,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: ../wiki ;
+	--web-action-target: ../wiki;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;

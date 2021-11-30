@@ -34,12 +34,13 @@
                 <div id="Group_1" style="top: 110px">
                     {% if user.is_authenticated %}
                         <h5 style="text-decoration: none; color: white">Your profile: {{ user.username }}</h5>
-                        <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
+                <div id="Logout_button">
+                        <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
                     {% else %}
-                        <a class="btn btn-lg btn-primary" href="{% url 'login' %}"
-                           style="font-family: Dosis; background-color: white; color: #1b1b1b">Login</a>
-                        <a class="btn btn-lg btn-primary" href="{% url 'signup' %}"
-                           style="font-family: Dosis; background-color: green">Register</a>
+                    <div id="Login_button">
+                        <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
+                    <div id="Signup_button">
+                        <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
                     {% endif %}
                 </div>
             </nav>

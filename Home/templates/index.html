@@ -55,10 +55,8 @@
          src={% static 'media/logo.png' %} srcset={% static 'media/logo.png' %}, {% static 'media/logo@2x.png' %}>
 </div>
 <div id="billboard_button">
-    <a><img src="{% static 'media/billboard_button.png' %}"/></div>
+    <a href="{% url 'billboard' %}"><img src="{% static 'media/billboard_button.png' %}"/></div>
 
-<div id="Login2_button">
-    <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a></div>
 {% endblock %}
 </body>
 </html>

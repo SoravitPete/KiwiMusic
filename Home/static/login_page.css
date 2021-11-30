@@ -39,12 +39,12 @@
 	width: 311px;
 	height: 282px;
 	left: 400px;
-	top: 350px;
+	top: 390px;
 	overflow: visible;
 }
 #WELCOME_TO {
 	left: 385px;
-	top: 260px;
+	top: 300px;
 	position: absolute;
 	overflow: visible;
 	width: 304px;
@@ -115,8 +115,8 @@
 	color: rgba(255,255,255,1);
 }
 #Login_x {
-	left: 1260px;
-	top: 265px;
+	left: 1282px;
+	top: 322px;
 	position: absolute;
 	overflow: visible;
 	width: 100px;
@@ -132,16 +132,16 @@
 	position: absolute;
 	width: 543px;
 	height: 93px;
-	left: 1050px;
-	top: 360px;
+	left: 1057px;
+	top: 422px;
 	overflow: visible;
 }
 #Type_your_username {
 	left: 49px;
-	top: 26px;
+	top: 49px;
 	position: absolute;
 	overflow: visible;
-	width: 490px;
+	width: 150px;
 	white-space: nowrap;
 	text-align: left;
 	font-family: Dosis;
@@ -193,13 +193,13 @@
 	position: absolute;
 	width: 541px;
 	height: 93px;
-	left: 1050px;
-	top: 490px;
+	left: 1059px;
+	top: 567px;
 	overflow: visible;
 }
 #Type_your_password {
 	left: 47px;
-	top: 30px;
+	top: 49px;
 	position: absolute;
 	overflow: visible;
 	width: 145px;
@@ -255,7 +255,7 @@
 	width: 345px;
 	height: 67px;
 	left: 1158px;
-	top: 650px;
+	top: 738px;
 	overflow: visible;
 }
 #main_login_button_ba {
@@ -265,14 +265,14 @@
 	filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.161));
 	position: absolute;
 	overflow: visible;
-	width: 695px;
-	height: 115px;
-	left: -175px;
-	top: -25px;
+	width: 363px;
+	height: 85px;
+	left: 0px;
+	top: 0px;
 }
 #Login_bb {
-	left: 0px;
-	top: -2px;
+	left: 139px;
+	top: 12px;
 	position: absolute;
 	overflow: visible;
 	width: 70px;
