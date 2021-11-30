@@ -68,7 +68,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <div id="Username_part">
-            <div class="mb-3 mt-3" id="Type_your_username">
+            <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
                 <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
             </div>
             <img id="user_icon" src="{% static 'media/user_icon.png' %}" srcset="{% static 'media/user_icon.png' %}">
@@ -82,7 +82,7 @@
             </svg>
         </div>
         <div id="Password_part">
-            <div class="mb-3 mt-3" id="Type_your_username">
+            <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
                 <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
             </div>
             <img id="password_icon" src="{% static 'media/password_icon.png' %}"

@@ -15,8 +15,8 @@
 </head>
 <body>
 {% block content %}
-    <div id="Login_page">
-        <img id="login_bg" src="{% static 'media/login_bg.png' %}">
+    <div id="Signup_page">
+        <img id="signup_bg" src="{% static 'media/login_bg.png' %}">
         <svg class="white_rectangle">
             <rect id="white_rectangle" rx="48" ry="48" x="0" y="0" width="1519" height="750">
             </rect>
@@ -67,7 +67,7 @@
     <form method="post">
         {% csrf_token %}
         <div id="Username_part">
-            <div class="mb-3 mt-3" id="Type_your_username">
+            <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
                 <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
             </div>
             <img id="user_icon" src="{% static 'media/user_icon.png' %}" srcset="{% static 'media/user_icon.png' %}">
@@ -81,7 +81,7 @@
             </svg>
         </div>
         <div id="Password_part">
-            <div class="mb-3 mt-3" id="Type_your_username">
+            <div class="mb-3 mt-3" id="Type_your_username" style="top: 24px; width: 490px">
                 <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
             </div>
             <img id="password_icon" src="{% static 'media/password_icon.png' %}"
@@ -96,11 +96,10 @@
             </svg>
         </div>
         <div id="Confirm_password_part">
-            <div id="Type_your_password_">
+            <div class="mb-3 mt-3" id="Type_your_password_" style="top: 24px; width: 490px">
                 <input type="password" class="form-control" id="confirm_password" placeholder="Confirm password" name="pswd" required>
             </div>
-            <img id="confirm_password_icon" src="{% static 'media/password_icon.png' %}" srcset="confirm_password_icon.png 1x">
-
+            <img id="confirm_password_icon" src="{% static 'media/password_icon.png' %}" srcset="{% static 'media/password_icon.png' %}">
             <div id="Confirm_password">
                 <span>Confirm password</span>
             </div>
@@ -110,10 +109,10 @@
             </svg>
         </div>
         <div id="Main_login_button">
-            <img src="{% static 'media/login_page_button.png' %}" class="main_login_button_ba" alt="">
-            <div id="Login_bb">
+            <img src="{% static 'media/login_page_button.png' %}" class="main_login_button_bf" alt="">
+            <div id="Register_bg">
                 <button type="submit" class="btn btn-outline-light btn-lg b"
-                        style="width: 345px; height: 69px; font-family: Dosis; font-size: 26px">Login
+                        style="width: 345px; height: 69px; font-family: Dosis; font-size: 26px">Signup
                 </button>
             </div>
         </div>
