@@ -79,3 +79,5 @@ wrapt==1.12.1
 wsproto==1.0.0
 yarl==1.7.2
 zope.interface==5.4.0
+python-dotenv==0.19.0
+python-environ
