@@ -10,15 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
-import environ
+from decouple import config
 from pathlib import Path
 import django_heroku
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-env = environ.Env()
-env.read_env()
-IS_HEROKU = env('IS_HEROKU', cast=bool, default=False)
+IS_HEROKU = config('IS_HEROKU', cast=bool, default=False)
 if IS_HEROKU:
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 else:
