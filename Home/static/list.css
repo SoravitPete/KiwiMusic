@@ -1,45 +1,11 @@
-.mediaViewInfo {
-	--web-view-name: S_List page;
-	--web-view-id: S_List_page;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-:root {
-	--web-view-ids: S_List_page;
-}
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	border: none;
-}
 #S_List_page {
 	position: absolute;
-	width: 1920px;
+	width: 100%;
 	height: 2713px;
 	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
 	overflow: hidden;
-	--web-view-name: S_List page;
-	--web-view-id: S_List_page;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
-@keyframes fadein {
 
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-
-}
 #S_List_white_rectangle {
 	fill: rgba(255,255,255,1);
 }
@@ -48,7 +14,7 @@
     overflow: visible;
     width: 1612px;
     height: 2328px;
-    left: 154px;
+    left: 125px;
     top: 226px;
 }
 #list {
@@ -71,11 +37,29 @@
 }
 
 #home {
-	left: 1047px;
+	left: 900px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
 	width: 123px;
+	white-space: nowrap;
+	--web-animation: fadein 0.3s ease-out;
+	--web-action-type: page;
+	--web-action-target: ../;
+	cursor: pointer;
+	text-align: left;
+	font-family: Dosis;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 55px;
+	color: rgba(255,255,255,1);
+}
+#blog {
+	left: 1080px;
+	top: 95px;
+	position: absolute;
+	overflow: visible;
+	width: 90px;
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
@@ -88,26 +72,8 @@
 	font-size: 55px;
 	color: rgba(255,255,255,1);
 }
-#blog {
-	left: 1222px;
-	top: 95px;
-	position: absolute;
-	overflow: visible;
-	width: 90px;
-	white-space: nowrap;
-	--web-animation: fadein 0.3s ease-out;
-	--web-action-type: page;
-	--web-action-target: blog;
-	cursor: pointer;
-	text-align: left;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 55px;
-	color: rgba(255,255,255,1);
-}
 #wiki {
-	left: 1364px;
+	left: 1240px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -115,7 +81,7 @@
 	white-space: nowrap;
 	--web-animation: fadein 0.3s ease-out;
 	--web-action-type: page;
-	--web-action-target: wiki;
+	--web-action-target: ../wiki;
 	cursor: pointer;
 	text-align: left;
 	font-family: Dosis;
@@ -135,10 +101,35 @@
 }
 #Group_1 {
 	position: absolute;
-	width: 206px;
+	width: 300px;
 	height: 48px;
-	left: 1517px;
-	top: 105px;
+	left: 1400px;
+	top: 100px;
+	overflow: visible;
+}
+
+#Logout_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 82px;
+	top: 7px;
+	overflow: visible;
+}
+#Login_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: -50px;
+	top: 7px;
+	overflow: visible;
+}
+#Signup_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 60px;
+	top: 7px;
 	overflow: visible;
 }
 

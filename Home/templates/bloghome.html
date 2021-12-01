@@ -2,7 +2,6 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="../static/blog.css"/>
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +11,13 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'blog.css' %}" type="text/css" id="applicationStylesheet">
     <script id="applicationScript" type="text/javascript" src="{% static 'page.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
     <title>Blog page</title>
-
 </head>
-
 <body>
 <div id="Blog_page">
-    <svg id="Blog_white_rectangle">
-        <rect id="Blog_white_rectangle" rx="36" ry="36" x="0" y="0" width="1612" height="1562"></rect>
-    </svg>
     <div>
         <nav>
             <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
@@ -38,84 +35,59 @@
             </ul>
             <div id="Group_1" style="top: 110px">
                 {% if user.is_authenticated %}
-                Your profile: {{ user.username }}
-                <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
+                    <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
+                    <div id="username"><h5 style="text-decoration: none; color: white">{{ user.username }}</h5></div>
+                    <div id="Logout_button">
+                    <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
                 {% else %}
-                <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
-                <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
+                    <div id="Login_button">
+                        <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
+                    <div id="Signup_button">
+                        <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
                 {% endif %}
-            </div>
+                </div>
         </nav>
     </div>
     <div id="Blog_ci_Class">
         <span>Blog</span>
     </div>
-    <div id="Search_Class">
-        <input type="text" placeholder="Search...">
-
-    </div>
-    <img id="Search_icon_Class" src="{% static 'media/Search_icon.png' %} "
-         srcset={% static 'media/Search_icon.png' %}, {% static 'media/Search_icon.png@2x.png' %}>
-
-
-    <div id ="Create_blog_Class">
-    <a class="btn btn-success" href="/home/blog/createBlog/">Create your blog</a></div>
-
-
-    <div id="Category" style="	font-style: normal; font-weight: normal; font-size: 35px;font-family: Dosis">
-        <div id="Categories">
-            <span>Categories</span>
-        </div>
-        <img id="categories_icon"
-             src={% static 'media/categories_icon.png' %} srcset={% static 'media/categories_icon.png' %}, {% static
-        'media/categories_icon@2x.png' %}>
-        <div id="song_type">
-            {% if type_list %}
-            <ul>
-                {% for each_song in type_list %}
-                <li style="display: block"><a href="/home/wiki/{{ each_song.song_type }}/">{{ each_song.song_type }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p>No any songs.</p>
-            {% endif %}
-        </div>
-    </div>
-    <div id="Trending">
-        <div id="Trending_">
-            <span>Trending</span>
-        </div>
-        <img id="trending_icon" src={% static 'media/trending_icon.png' %} srcset={% static 'media/trending_icon.png' %}, {% static 'media/trending_icon@2x.png' %}>
-    </div>
+    <div id="Create_blog_Class">
+        <a class="btn btn-success" href="/home/blog/createBlog/">Create your blog</a></div>
     <div id="Blog_Bar">
         <svg class="blogbar_rectangle_bn">
             <linearGradient id="blogbar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
                 <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
                 <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
             </linearGradient>
-            <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1221" height="83">
-            </rect>
         </svg>
-        <div id="blogbar">
-            <span>Blog</span>
-        </div>
     </div>
-
-
     <div id="blog_name">
         {% if blog_name %}
-        <ul>
             {% for each_name_blog in blog_name %}
-            <li><a href="/home/blog/{{ each_name_blog.blog_name }}/user_name/">{{ each_name_blog.blog_name }}</a></li>
-            <li style="display: block">created by {{ each_name_blog.creator }}</li>
-            <li style="display: block">Date {{ each_name_blog.pub_date }}</li>
+                <div class="card border-secondary border-2 mb-4 w-60" style="max-width: 670px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{% static 'media/blog_pic.png' %}" class="img-fluid rounded-start" alt="blog_pic">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title"><a
+                                        href="/home/blog/{{ each_name_blog.blog_name }}/user_name/">{{ each_name_blog.blog_name }}</a>
+                                </h3>
+                                <ul>
+                                    <li class="card-text">Created by {{ each_name_blog.creator }}</li>
+                                    <li class="card-text"><small
+                                            class="text-muted">{{ each_name_blog.pub_date }}</small></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-        </ul>
-    </div>
-    {% else %}
-    <p>No any blogs.</p>
-    {% endif %}
+            </div>
+        {% else %}
+            <p>No any blogs.</p>
+        {% endif %}
 </div>
 </body>
 </html>

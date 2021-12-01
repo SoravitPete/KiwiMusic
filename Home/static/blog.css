@@ -1,35 +1,5 @@
-.mediaViewInfo {
-	--web-view-name: Blog page;
-	--web-view-id: Blog_page;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-:root {
-	--web-view-ids: Blog_page;
-}
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	border: none;
-}
-
-@keyframes fadein {
-
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-
-}
-
 #home {
-	left: 1047px;
+	left: 900px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -47,7 +17,7 @@
 	color: rgba(255,255,255,1);
 }
 #blog {
-	left: 1222px;
+	left: 1080px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -65,7 +35,7 @@
 	color: rgba(255,255,255,1);
 }
 #wiki {
-	left: 1364px;
+	left: 1240px;
 	top: 95px;
 	position: absolute;
 	overflow: visible;
@@ -93,10 +63,10 @@
 }
 #Group_1 {
 	position: absolute;
-	width: 206px;
+	width: 300px;
 	height: 48px;
-	left: 1517px;
-	top: 105px;
+	left: 1400px;
+	top: 100px;
 	overflow: visible;
 }
 #Login_rectangle {
@@ -154,32 +124,16 @@
 
 #Blog_page{
 	position: absolute;
-	width: 1920px;
-	height: 2713px;
+	width: 100%;
+	height: 26%;
 	background: linear-gradient(180deg, rgba(93,236,167,1) 0%, rgba(67,217,230,1) 100%);
-	overflow: hidden;
-	--web-view-name: Home page;
-	--web-view-id: Home_page;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-#Blog_white_rectangle {
-	fill: rgba(255,255,255,1);
-}
-#Blog_white_rectangle {
-	position: absolute;
 	overflow: visible;
-	width: 1612px;
-	height: 2328px;
-	left: 154px;
-	top: 226px;
 }
+
+
 #Blog_ci_Class {
 	left: 896px;
-	top: 264px;
+	top: 260px;
 	position: absolute;
 	overflow: visible;
 	width: 130px;
@@ -221,7 +175,7 @@
 	width: 226px;
 	height: 68px;
 	left: 895px;
-	top: 490px;
+	top: 390px;
 	overflow: visible;
 }
 
@@ -232,11 +186,6 @@
 	left: 198px;
 	top: 660px;
 	overflow: visible;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
 }
 #Categories {
 	left: 40px;
@@ -275,49 +224,20 @@
 	top: -30px;
 	overflow: visible;
 }
-
-#Trending {
+#username {
 	position: absolute;
-	width: 153px;
-	height: 44px;
-	left: 198px;
-	top: 600px;
-	overflow: visible;
-	--web-scale-to-fit: true;
-	--web-scale-to-fit-type: width;
-	--web-enable-scale-up: true;
-	--web-scale-on-resize: true;
-	--web-enable-deep-linking: true;
-}
-#Trending_ {
-	left: 40px;
-	top: -30px;
-	position: absolute;
-	overflow: visible;
-	width: 111px;
-	white-space: nowrap;
-	text-align: left;
-	font-family: Dosis;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 35px;
-	color: rgba(54,65,63,1);
-}
-#trending_icon {
-	position: absolute;
-	width: 39px;
-	height: 43px;
-	left: 0px;
-	top: -30px;
+	width: 300px;
+	height: 48px;
+	left: 18px;
+	top: 30px;
 	overflow: visible;
 }
-
-#Blog_Bar {
+#Your_profile {
 	position: absolute;
-	width: 1221px;
-	height: 607px;
-	left: 450px;
-	top: 560px;
+	width: 300px;
+	height: 48px;
+	left: 2px;
+	top: 5px;
 	overflow: visible;
 }
 
@@ -329,11 +249,11 @@
 	overflow: visible;
 	width: 1221px;
 	height: 83px;
-	left: 0;
+	left: 150;
 	top: 0;
 }
 #blogbar {
-	left: 37px;
+	left: 10px;
 	top: 5px;
 	position: absolute;
 	overflow: visible;
@@ -348,12 +268,38 @@
 }
 #blog_name {
 	position: absolute;
-	left: 450px;
-	top: 660px;
+	left: 612px;
+	top: 475px;
 	font-family: Dosis;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 30px;
 	overflow: visible;
+	width: 1000px;
+
 }
 
+#Logout_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 82px;
+	top: 7px;
+	overflow: visible;
+}
+#Login_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: -50px;
+	top: 7px;
+	overflow: visible;
+}
+#Signup_button {
+	position: absolute;
+	width: 300px;
+	height: 48px;
+	left: 60px;
+	top: 7px;
+	overflow: visible;
+}

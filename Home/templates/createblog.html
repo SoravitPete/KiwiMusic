@@ -12,6 +12,9 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'createblog.css' %}" type="text/css" id="applicationStylesheet">
     <script id="applicationScript" type="text/javascript" src="{% static 'page.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
 </head>
 <title>Create Blog</title>
 <body>
@@ -36,40 +39,43 @@
             </ul>
             <div id="Group_1" style="top: 110px">
                 {% if user.is_authenticated %}
-                Your profile: {{ user.username }}
-                <a class="btn btn-danger" href="{% url 'logout' %}" style="font-family: Dosis">Logout</a>
+                    <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
+                    <div id="username"><h5 style="text-decoration: none; color: white">{{ user.username }}</h5></div>
+                    <div id="Logout_button">
+                        <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
+                    </div>
                 {% else %}
-                <a class="btn btn-lg btn-primary" href="{% url 'login' %}" style="font-family: Dosis">Login</a>
-                <a class="btn btn-lg btn-primary" href="{% url 'signup' %}" style="font-family: Dosis">Register</a>
+                    <div id="Login_button">
+                        <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
+                    <div id="Signup_button">
+                        <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
                 {% endif %}
             </div>
         </nav>
-    <div id="Blog_Bar">
-        <svg class="blogbar_rectangle_bn">
-            <linearGradient id="blogbar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
-                <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
-                <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
-            </linearGradient>
-            <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1421" height="83">
-            </rect>
-        </svg>
-        <div id="blogbar">
-            <span>Create Your Own Blog</span>
+        <div id="Blog_Bar">
+            <svg class="blogbar_rectangle_bn">
+                <linearGradient id="blogbar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
+                    <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
+                    <stop offset="1" stop-color="#43d9e6" stop-opacity="1"></stop>
+                </linearGradient>
+                <rect id="blogbar_rectangle_bn" rx="0" ry="0" x="0" y="0" width="1421" height="83">
+                </rect>
+            </svg>
+            <div id="blogbar">
+                <span>Create Your Own Blog</span>
+            </div>
         </div>
-    </div>
-
-
-    <div id="Create_blog_class">
-        <form action='.' method="POST">
-            {% csrf_token %}
-            <div id="Create_blog_bar">
-                <input type='text' name="title" placeholder="Blog Name"/>
-            </div>
-            <div style="margin-top:200px;">
-                <button type="submit" class="btn btn-success btn-lg">Create Blog</button>
-            </div>
-        </form>
-    </div>
+        <div id="Create_blog_class">
+            <form action='.' method="POST">
+                {% csrf_token %}
+                <div id="Create_blog_bar">
+                    <input type='text' name="title" placeholder="Blog Name"/>
+                </div>
+                <div style="margin-top:200px;">
+                    <button type="submit" class="btn btn-success btn-lg">Create Blog</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 </body>
