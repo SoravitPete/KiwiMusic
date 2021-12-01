@@ -23,12 +23,13 @@ daphne==3.0.2
 distlib==0.3.3
 dj-database-url==0.5.0
 Django==3.2.7
-django-environ==0.7.0
-django-heroku==0.3.1
+django-environ==0.8.1
+django-heroku==0.0.0
 filelock==3.3.1
 flake8==3.9.2
 flake8-docstrings==1.6.0
 frozenlist==1.2.0
+gunicorn==20.1.0
 h11==0.12.0
 hiredis==2.0.0
 hyperlink==21.0.0
