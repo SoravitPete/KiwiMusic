@@ -35,16 +35,16 @@
             </ul>
             <div id="Group_1" style="top: 110px">
                 {% if user.is_authenticated %}
-                <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
-                <div id="username"><h5 style="text-decoration: none; color: white">{{user.username}}</h5></div>
-                <div id="Logout_button">
+                    <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
+                    <div id="username"><h5 style="text-decoration: none; color: white">{{ user.username }}</h5></div>
+                    <div id="Logout_button">
                     <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
-                    {% else %}
+                {% else %}
                     <div id="Login_button">
                         <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
                     <div id="Signup_button">
                         <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
-                    {% endif %}
+                {% endif %}
                 </div>
         </nav>
     </div>
@@ -63,28 +63,31 @@
     </div>
     <div id="blog_name">
         {% if blog_name %}
-        {% for each_name_blog in blog_name %}
-        <div class="card border-secondary border-2 mb-4 w-60" style="max-width: 670px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="{% static 'media/blog_pic.png' %}" class="img-fluid rounded-start" alt="blog_pic">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h3 class="card-title"><a href="/home/blog/{{ each_name_blog.blog_name }}/user_name/">{{each_name_blog.blog_name }}</a></h3>
-                        <ul>
-                        <li class="card-text">Created by {{ each_name_blog.creator }}</li>
-                        <li class="card-text"><small class="text-muted">{{ each_name_blog.pub_date }}</small></li>
-                            </ul>
+            {% for each_name_blog in blog_name %}
+                <div class="card border-secondary border-2 mb-4 w-60" style="max-width: 670px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{% static 'media/blog_pic.png' %}" class="img-fluid rounded-start" alt="blog_pic">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title"><a
+                                        href="/home/blog/{{ each_name_blog.blog_name }}/user_name/">{{ each_name_blog.blog_name }}</a>
+                                </h3>
+                                <ul>
+                                    <li class="card-text">Created by {{ each_name_blog.creator }}</li>
+                                    <li class="card-text"><small
+                                            class="text-muted">{{ each_name_blog.pub_date }}</small></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            {% endfor %}
             </div>
-        </div>
-        {% endfor %}
-    </div>
-    {% else %}
-    <p>No any blogs.</p>
-    {% endif %}
+        {% else %}
+            <p>No any blogs.</p>
+        {% endif %}
 </div>
 </body>
 </html>

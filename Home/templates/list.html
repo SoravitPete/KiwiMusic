@@ -15,49 +15,50 @@
 </head>
 <body>
 {% block content %}
-<div id="S_List_page">
-    <svg class="S_List_white_rectangle">
-        <rect id="S_List_white_rectangle" rx="36" ry="36" x="0" y="0" width="1612" height="1562"></rect>
-    </svg>
-    <div>
-        <nav>
-            <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
-                 srcset={% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}>
-            <ul>
-                <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
-                    <a class="nav-link" style="color: white" href="/home/">Home</a>
-                </li>
-                <li id="blog" onclick="application.goToTargetView(event)" style="display: inline-block">
-                    <a class="nav-link" style="color: white" href="/home/blog/">Blog</a>
-                </li>
-                <li id="wiki" onclick="application.goToTargetView(event)" style="display: inline-block">
-                    <a class="nav-link" style="color: white" href="/home/wiki/">Wiki</a>
-                </li>
-            </ul>
-            <div id="Group_1" style="top: 110px">
-                {% if user.is_authenticated %}
-                <h4 style="text-decoration: none;color: white">Your profile: {{ user.username }}</h4>
-                <div id="Logout_button">
-                        <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
+    <div id="S_List_page">
+        <svg class="S_List_white_rectangle">
+            <rect id="S_List_white_rectangle" rx="36" ry="36" x="0" y="0" width="1612" height="1562"></rect>
+        </svg>
+        <div>
+            <nav>
+                <img id="logo-banner" src="{% static 'media/logo-banner.png' %}"
+                     srcset={% static 'media/logo-banner.png' %}, {% static 'media/logo-banner@2x.png' %}>
+                <ul>
+                    <li id="home" onclick="application.goToTargetView(event)" style="display: inline-block">
+                        <a class="nav-link" style="color: white" href="/home/">Home</a>
+                    </li>
+                    <li id="blog" onclick="application.goToTargetView(event)" style="display: inline-block">
+                        <a class="nav-link" style="color: white" href="/home/blog/">Blog</a>
+                    </li>
+                    <li id="wiki" onclick="application.goToTargetView(event)" style="display: inline-block">
+                        <a class="nav-link" style="color: white" href="/home/wiki/">Wiki</a>
+                    </li>
+                </ul>
+                <div id="Group_1" style="top: 110px">
+                    {% if user.is_authenticated %}
+                        <h4 style="text-decoration: none;color: white">Your profile: {{ user.username }}</h4>
+                        <div id="Logout_button">
+                            <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
+                        </div>
                     {% else %}
-                    <div id="Login_button">
-                        <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
-                    <div id="Signup_button">
-                        <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
-                {% endif %}
-            </div>
-        </nav>
+                        <div id="Login_button">
+                            <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
+                        <div id="Signup_button">
+                            <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
     </div>
-</div>
-<div id="Song_type">
-    <a>{{ song_type.song_type }}</a>
+    <div id="Song_type">
+        <a>{{ song_type.song_type }}</a>
     </div>
-<div id="Search_Class">
+    <div id="Search_Class">
         <input type="text" placeholder="Search...">
     </div>
-<img id="Search_icon_Class" src="{% static 'media/Search_icon.png' %} "
+    <img id="Search_icon_Class" src="{% static 'media/Search_icon.png' %} "
          srcset={% static 'media/Search_icon.png' %}, {% static 'media/Search_icon.png@2x.png' %}>
-<div id="Songs_Bar">
+    <div id="Songs_Bar">
         <svg class="songs_bar_rectangle_bn">
             <linearGradient id="songs_bar_rectangle_bn" spreadMethod="pad" x1="0" x2="1" y1="0.5" y2="0.5">
                 <stop offset="0" stop-color="#5deca7" stop-opacity="1"></stop>
@@ -69,12 +70,13 @@
         <div id="songs_bar">
             <span>Songs</span>
         </div>
-    <div id="The_List">
-        {% for song in list_song %}
-        <li><a href="/home/wiki/{{ song_type.song_type }}/{{song}}" style="text-decoration: none;color: #36413F">{{ song }}</a></li>
-        {% endfor %}
-            </div>
-</div>
+        <div id="The_List">
+            {% for song in list_song %}
+                <li><a href="/home/wiki/{{ song_type.song_type }}/{{ song }}"
+                       style="text-decoration: none;color: #36413F">{{ song }}</a></li>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 </body>
 </html>

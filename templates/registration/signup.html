@@ -82,7 +82,6 @@
                 {{ form.username.errors }}
             </div>
             <img id="user_icon" src="{% static 'media/user_icon.png' %}" srcset="{% static 'media/user_icon.png' %}">
-
             <div id="Username">
                 <span>Username</span>
             </div>
@@ -98,7 +97,6 @@
             </div>
             <img id="password_icon" src="{% static 'media/password_icon.png' %}"
                  srcset="{% static 'media/password_icon.png' %}">
-
             <div id="Password">
                 <span>Password</span>
             </div>
@@ -130,22 +128,6 @@
                 </button>
             </div>
         </div>
-    </form>
-    <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            <p>
-                {{ field.label_tag }}<br>
-                {{ field }}
-                {% if field.help_text %}
-                    <small style="color: grey">{{ field.help_text }}</small>
-                {% endif %}
-                {% for error in field.errors %}
-                    <p style="color: red">{{ error }}</p>
-                {% endfor %}
-            </p>
-        {% endfor %}
-        <button type="submit">Sign up</button>
     </form>
 {% endblock %}
 </body>
