@@ -62,6 +62,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+
 
 ROOT_URLCONF = 'kiwimusic.urls'
 
