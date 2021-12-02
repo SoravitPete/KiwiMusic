@@ -39,17 +39,18 @@
             </ul>
             <div id="Group_1" style="top: 110px">
                 {% if user.is_authenticated %}
-                <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
-                <div id="username"><h5 style="text-decoration: none; color: white">{{ user.username }}</h5></div>
-                <div id="Logout_button" style="left: 175px">
-                    <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
-                    {% else %}
+                    <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
+                    <div id="username"><h5 style="text-decoration: none; color: white">{{ user.username }}</h5></div>
+                    <div id="Logout_button" style="left: 175px">
+                        <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
+                    </div>
+                {% else %}
                     <div id="Login_button">
                         <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
                     <div id="Signup_button">
                         <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
-                    {% endif %}
-                </div>
+                {% endif %}
+            </div>
         </nav>
         <div id="Blog_Bar">
             <svg class="blogbar_rectangle_bn">
