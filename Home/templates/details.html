@@ -34,17 +34,17 @@
                         <a class="nav-link" style="color: white" href="/home/wiki/">Wiki</a>
                     </li>
                 </ul>
-                <div id="Group_1" style="top: 110px">
-                    {% if user.is_authenticated %}
-                        <h4 style="text-decoration: none;color: white">Your profile: {{ user.username }}</h4>
-                        <div id="Logout_button">
-                            <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
-                        </div>
+            <div id="Group_1" style="top: 110px">
+                {% if user.is_authenticated %}
+                <div id="Your_profile"><h5 style="text-decoration: none; color: white">Your profile:</h5></div>
+                <div id="username"><h5 style="text-decoration: none; color: white">{{ user.username }}</h5></div>
+                <div id="Logout_button" style="left: 175px">
+                    <a href="{% url 'logout' %}"><img src="{% static 'media/logout_button.png' %}"/></a>
                     {% else %}
-                        <div id="Login_button">
-                            <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
-                        <div id="Signup_button">
-                            <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
+                    <div id="Login_button">
+                        <a href="{% url 'login' %}"><img src="{% static 'media/login_button.png' %}"/></a></div>
+                    <div id="Signup_button">
+                        <a href="{% url 'signup' %}"><img src="{% static 'media/signup_button.png' %}"/></a></div>
                     {% endif %}
                 </div>
             </nav>
