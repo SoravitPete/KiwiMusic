@@ -31,3 +31,6 @@ about music to exchange ideas because in the world of music new things are happe
 - [Iteration4](../../wiki/Iteration-4)
 
 - [Iteration5](../../wiki/Iteration-5)
+
+## Spotify API Document
+- [Document](https://spotipy.readthedocs.io/en/2.19.0/)
